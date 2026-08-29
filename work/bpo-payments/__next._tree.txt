@@ -1,0 +1,7 @@
+:HL["/_next/static/chunks/0tbfz8qllx98p.css","style"]
+:HL["/_next/static/chunks/3zell6e6g17d4.css","style"]
+:HL["/_next/static/media/70bc3e132a0a741e-s.p.3t6q91iet4nsy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/Geist_Variable-s.p.0mrjj4bg00-he.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/satoshi_700-s.p.2_-zzs2una4mm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/satoshi_900-s.p.1_bicwjk2v12h.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"work","param":null,"prefetchHints":4192,"slots":{"children":{"name":"bpo-payments","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"2OYESbM6J1LTOF9ZLFR2n"}

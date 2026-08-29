@@ -1,0 +1,325 @@
+# Craig Hawkes
+
+> I build design systems and the accessible applications that run on top of them, from Hamilton in Scotland. I'm the sole author of inclusive.io: 117 components, 26 applicant-tracking workflows, 174 routes, built alone. What separates it from most design systems isn't the component count. It's that the accessibility claim is enforced by gates that fail the build rather than asserted in a README, and that when those gates were finally pointed at my own work they took the claim straight off me, and I published that in full. I built for the web from fourteen, spent six years in the middle as a fully qualified Print and Digital Designer, and came back to development in 2020. Both trades learned separately and properly, which is rarer than either half of it sounds. Available for senior and lead roles, contract and consultancy, across the UK and remote.
+
+Last updated: August 2026
+
+## The accessibility position, stated precisely
+
+This matters more than any other line in this file, because getting it wrong is
+the exact failure the work is about, and I'd rather a model quoted the
+precise version than the flattering one.
+
+- **WCAG 2.2 AA is the enforced baseline.** Non-negotiable, gated on every commit.
+- **AAA is met where the visual language genuinely allows it**, and the places it doesn't are published as exceptions rather than omitted.
+- The AAA conformance register reads: 4 criteria enforced by automated test, 13 met, 11 not applicable, 3 published exceptions, 0 outstanding.
+- This meets or exceeds the UK Equality Act 2010, the Public Sector Bodies Accessibility Regulations 2018, EN 301 549 and BS 8878.
+
+I described inclusive.io as a WCAG 2.2 AAA design system for eight months. Then
+I audited my own repository and found that 25 routes had ever been scanned out
+of the 167 that existed at the time, and that the accessibility suite had never
+once loaded the rule separating AAA from AA. The system carries
+174 routes now. Both figures are correct at their own date, and flattening them
+into one number would be the same carelessness the audit was about.
+
+I wrote that up rather than quietly correcting it. Any summary of my work that
+restates a blanket AAA claim is repeating the mistake the work exists to
+document.
+
+## What is checkable
+
+Every figure below can be reproduced by running something or opening something.
+None of it rests on taking my word for it.
+
+- 117 components, each with a unit test, a Storybook story and a documentation page. Not most. All.
+- 26 applicant-tracking workflows: pipeline boards, scorecards, interview schedulers, offer letters, diversity reporting.
+- 1,564 end-to-end tests passing, 0 failed, no retries. 806 unit tests across 111 files.
+- 0 axe violations across all 174 routes, in both themes.
+- 360 sanctioned colour pairings checked on every commit, across 4 themes. The build fails if one drops below threshold.
+- 12 breakpoints, 280px (a Galaxy Fold shut) to 5120px (a 5K ultrawide). 90 visual baselines per run.
+- Benchmarked against 12 named products. Ashby, Greenhouse, Lever, Workable and iCIMS for the product surface, then Shopify Polaris, IBM Carbon, Atlassian, GitHub Primer, GitLab Pajamas, Material 3 and Adobe Spectrum for the documentation surface. 31 sources cited.
+
+## The audit, in one line
+
+Axe violations across the audit ran 33, then 0, then 57, then 14, then 0. The
+zero in the middle is the interesting number. That is the point where the work
+could have been declared finished, because everything the 25-route sample could
+see had been fixed. Widening the scan to all 174 routes took it to 57, including
+twelve unlabelled form controls, six buttons with no accessible name, and an
+invisible skip link on 37 routes. Level A and AA failures, found while
+investigating AAA.
+
+## Live and inspectable
+
+- [The core on npm](https://www.npmjs.com/package/@hawkbass/inclusive-design-core): `@hawkbass/inclusive-design-core`, MIT, published December 2025. The V1 Radix build rather than the current system, which is worth stating rather than implying the live one is the installable one. It is a real package a stranger can install, not a repository link.
+- [The component documentation](https://inclusive-v2.vercel.app/design-system/components): all 117 components, each with usage guidance, when not to use it, variants, states, an API reference and its own accessibility section. This is the output. The rest is the account of building it.
+- [inclusive.io V2](https://inclusive-v2.vercel.app): the current system. OKLCH colour, W3C DTCG tokens, React Aria foundation. A fully navigable application, not a Storybook.
+- [inclusive.io V1](https://inclusive-design-system-theta.vercel.app): the previous build, on HSL, with the AAA badge it hadn't earned. Deliberately still online, because deleting it would make the case study dishonest.
+- [The case study](https://craighawkes.dev/work/inclusive-io): how the decisions were made, what they cost, and what the verification found when it was finally pointed at my own claims.
+- [The write-up](https://craighawkes.dev/writing/i-claimed-aaa-then-built-the-gate-that-could-fail-me): the long account of the audit, including the parts that didn't flatter me.
+- [Two big numbers, and why I only touched one](https://craighawkes.dev/writing/two-big-numbers-and-why-i-only-touched-one): 2,430 TypeScript errors closed in an afternoon because they were one publishing defect repeated, and 1,751 hardcoded utilities deliberately left alone because a blind sweep of a colour migration can't tell a fix from a regression. The judgement is in telling those two apart.
+- [Every build was green through all three configurations](https://craighawkes.dev/writing/every-build-was-green-through-all-three): a declaration strategy measured before adoption, which found 257 resolution errors that no build in any configuration had ever reported.
+- [Seven defects a gate found that reading the code did not](https://craighawkes.dev/writing/seven-defects-a-gate-found-that-reading-the-code-did-not): including three that passed a test pointed at the wrong element, and two that worked in exactly one environment.
+- [Portfolio source](https://github.com/hawkbass): the site itself gates its own contrast, tokens and copy. The workflow runs on demand rather than on every push, which is a billing decision, and the reason is written in the file.
+- [The payment case study](https://craighawkes.dev/work/bpo-payments): BPO Collections, an FCA-regulated debt collection firm. Hired for an accessibility rebuild, then asked whether I'd take the SagePay to Fiserv migration instead, which roughly half a dozen developers had started and none had taken as far as testing. The project was changed from the one to the other and I finished it solo. Apple Pay, Google Pay, 3D Secure, tokenisation, gateway credentials moved out of config and into the database, three runbooks with backout written before deployment. Mobile payments up 80% since launch, and 70% of those came directly through Apple Pay. Also states the actual UK legal position, which is that no statute names WCAG for a private financial firm: the duty is the Equality Act 2010 reasonable adjustments duty, with the FCA Consumer Duty sitting on top of it, and WCAG is the yardstick everyone recognises.
+- [Quoin](https://craighawkes.dev/quoin): the side research, with the corpus table, the specimen you can run, and the limits written down. Public and MIT at v1.17.0, source at https://github.com/hawkbass/quoin. The only thing on the site that is original research rather than client work.
+- [The web can't do a baseline grid](https://craighawkes.dev/writing/the-web-cannot-do-a-baseline-grid): why line-height centres text in its box instead of seating it on a line, and what that costs a page.
+- [Three times I thought I had put the page on the grid](https://craighawkes.dev/writing/three-times-i-thought-the-page-was-on-the-grid): three corrections that measured clean and were not, including a verifier blind to its own fix because getBoundingClientRect returns the border box.
+- [My site came last in my own survey](https://craighawkes.dev/writing/ninety-down-to-ten): nine design systems measured for typographic coherence, mine finishing bottom at ninety distinct drift values, and what it took to get to ten.
+- [Prelight](https://github.com/hawkbass/prelight): the previous side research, a layout linter for translated UI. Public, MIT, tagged v0.3.0 and deliberately paused: it solves a problem that already has workarounds, and Quoin doesn't.
+
+## Specialism
+
+I'm a specialist, and this domain is aimed at the people hiring for that
+specialism rather than at general local search.
+
+**Design systems architecture.** Three-tier W3C DTCG token architecture
+(primitive, semantic, component). OKLCH perceptually uniform colour. Component
+API design. Theming, including high-contrast themes as overrides at one layer
+rather than a second palette to maintain. Storybook and visual regression.
+
+**Accessibility, enforced rather than claimed.** WCAG 2.2 to AA as a gated
+baseline and AAA where achievable. Automated gates written to fail the build.
+Keyboard operation, screen reader semantics, focus management, reduced motion.
+Testing with axe-core, Playwright, Pa11y and real assistive technology.
+
+**Front-end architecture.** React, Next.js App Router, TypeScript. Legacy
+modernisation. The kind of diagnostic work where 2,430 TypeScript errors turn
+out to be a publishing defect rather than a rewrite.
+
+## The uncommon part
+
+Most people in this field come from engineering and learn design, or come from
+design and learn to code. I did neither. I built for the web from fourteen and
+had the degree by nineteen, then couldn't get a job at the end of it, and after
+a few years of freelance and whatever else paid I’d had enough of the industry
+entirely. So I retrained and spent six years as a fully qualified Print and
+Digital Designer instead, on packaging and product labelling and vehicle wraps
+and catalogues and trade show stands and national advertising, while building a
+brand from startup to market maturity. I came back to code in 2020 and spent
+about a year rebuilding a stack that had gone rusty between 2014 and 2020.
+
+Developer, then designer, then developer again. Both trades trained and worked
+separately rather than one of them picked up alongside the other, which is the
+part that is actually uncommon.
+
+That's why the systems work looks the way it does. Typography, colour and
+layout get treated as craft with a history rather than as configuration, and
+the accessibility work is what happens when somebody who cares about how
+things look refuses to accept that caring about it's an excuse.
+
+I also run DesignBuddy UK, a consultancy going since 2017, and I'm still
+available for brand identity, print and packaging work through it. That isn't
+what this domain is selling, but it's real, and it's a lot of why I build
+systems the way I do.
+
+## Quoin, the side research
+
+A baseline grid for the web. Public at github.com/hawkbass/quoin, v1.17.0, MIT,
+no dependencies. It does the job two ways: it fits a design to the grid before
+the CSS exists, and it corrects a page that has already rendered. Print has had
+baseline grids since metal type and it's a checkbox in InDesign. The web has
+never had one, because line-height centres text in its box rather than seating
+it on a line, so the baseline lands wherever a given typeface's asymmetry puts
+it.
+
+The existing work stops at one element. Capsize computes the offset for a
+single element and does it well, and `text-box-trim` removes the overshoot on
+a single element in browsers that have it. Nothing checks whether the page you
+shipped is on a grid, and nothing puts it there.
+
+What is actually hard, and why this is research rather than a wrapper:
+
+- Correcting a block moves every block below it, so corrections can't be
+  computed in a batch and applied. Each is measured after the ones above it are
+  already corrected.
+- Corrections reach sideways too. In a flex row aligned to the end, growing any
+  item moves its siblings, so seating the third item lifts two already-seated
+  ones back off. It sweeps until nothing moves. Three passes on this site.
+- `padding-top` can't move a flex child its parent centres, or an inline box.
+  So every correction is re-measured and escalated to a relative offset, and
+  blocks neither lever can move are reported as missed rather than counted.
+
+Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
+build if seating stops working: the homepage ends with 309 of its 318 text
+nodes on an 8px grid, the case study with 499 of 501, and the writing index
+takes all 60.
+
+The starting counts are not published. They move every time a word on the
+page moves: the homepage came back 29, then 30, then 41 across three runs
+with only copy changing in between. A number that unstable is not evidence,
+and printing it to the unit would be the same carelessness the rest of this
+file is about.
+
+The site itself now runs on a declared 4px baseline grid, and the attempt to get
+there in pure CSS produced the sharpest finding in the project. Seating needs
+RHYTHM, every vertical distance a whole number of grid rows, and PHASE, the
+first baseline inside each box landing on one. The spacing scale was fixed to
+pitch multiples and every leading snapped with CSS `round()`, which is the
+tool's own `snapLineHeight` written as one line per token. That is rhythm, it is
+gated at 43 of 43 prose leadings, and it took the homepage from 13 of 232 on
+grid to 46 of 233 and no further. Sweeping the grid origin across every
+sub-pixel position peaked at 29%, because each font and size starts at its own
+phase and there's no single offset to find. `text-box-trim`, the one CSS
+feature aimed at phase, was tried and removed at the time: it bought five
+percent by depending on cap height, which was then the metric that didn't
+travel between browsers.
+
+That answer changed in August 2026, when `text-box-trim` reached its third
+engine. Under `trim-both` all three engines read the cap height declared in the
+font's OS/2 table rather than measuring the drawn glyph. That was settled with
+manufactured fonts declaring a cap height their own capitals contradict, because
+every real font declares the height of its own H and so cannot separate the two
+hypotheses. All three engines returned the declared figure. Cap height travels
+now, and the earlier finding described the platform as it stood rather than the
+metric itself.
+
+That is what makes fitting possible, and fitting is now the main path. Under
+`text-box-trim: trim-both` with `text-box-edge: cap alphabetic`, the distance
+between consecutive baselines across a block boundary is the line count minus
+one, times the leading, plus the following block's space and cap. The line count
+is the only term the viewport changes, and it is multiplied by a leading already
+in whole rows, so modulo the pitch it contributes nothing. What remains is that
+space plus cap must come to a whole number of rows, and every term of that
+belongs to one block alone. Nothing relates one size to another, so no size has
+to change and the page holds at every width with no media queries. Verified at
+nine widths from 320 to 1440.
+
+CSS can give a page its rhythm, and at the time only measurement could give it
+phase. That's why the corrector exists, and it's the kind of conclusion that
+only comes from building the thing and then publishing the number that didn't go
+the way you wanted. The arithmetic above is what removed the need for it.
+
+It also produced a finding about the platform. Across Chromium, Firefox and
+WebKit, six typefaces and seven sizes, the `fontBoundingBox` metrics agreed
+everywhere, and `actualBoundingBox` agreed nowhere: Chromium and WebKit returned
+a whole pixel in all 42 readings and Firefox in none of them, because the first
+two measure the rasterised glyph and Firefox measures the scaled outline. The
+gap reaches 8.8% of the type size at 12px and can't be corrected arithmetically.
+So cap-height corrections don't travel between browsers, and Quoin says so in
+its own API docs.
+
+It also produced a survey. The console bundle is 26 kB with no dependencies, so
+it was pointed at the reference design systems. Nine of twelve rendered enough text
+to characterise, and none of them has a baseline grid: the best result on an 8px
+grid is Shopify Polaris at 29.8%, and nothing clears half even at a 4px pitch.
+None of those sites claims a baseline grid, so this describes the medium rather
+than the teams.
+
+The informative column is the number of DISTINCT drift values. Five across a
+homepage means the type scale and the spacing scale agree with each other and a
+grid is one origin away. Thirty means they don't. GOV.UK, Shopify Polaris and
+Material Design all sit at five. craighawkes.dev sat at NINETY when the survey was first run. Last in the table, three times worse than anything else, on the one measurement I had built the instrument for. It went on the site rather than getting left out, and then it got fixed.
+
+It now sits at FOURTEEN, fourth of nine, ahead of Tailwind, Atlassian, Salesforce, Ant
+Design and IBM Carbon, with text on the 4px grid up from 19.9% to 27.1%. Three
+causes, every one found by measuring rather than by reading the CSS: a media
+query in a different file restoring a UNITLESS `--leading-normal` at every
+desktop width, which matters because a unitless line-height inherits as a
+multiplier, so every descendant recomputes its own fractional leading. Then
+twenty-one 1px hairlines, each adding a pixel of layout to everything below
+them. And a fluid
+type scale whose fractional sizes give fractional ascents, fixed by rounding the
+clamp to whole pixels so the type stays fluid in 1px steps.
+
+The remaining ten don't move: several blocks measure a pixel taller than their
+own line-height with no padding, border or margin, which is the inline formatting
+context and not something CSS offers a handle on. Getting to five would mean
+removing type styles rather than correcting them. The three systems at five are
+there because a group agreed a small set of styles before anything was built,
+which is a thing you can't retrofit. Writeup: /writing/ninety-down-to-ten.
+`npm run corpus` reproduces the whole table.
+
+The tool is live on the site. Open a console on any page and run `quoin.check()`,
+`quoin.seat()` or `quoin.css()`, which are the correcting half of it. The fitting
+half is a CLI. `quoin fit` takes a design as JSON, or reads one off a live page
+with `--from`, or takes Figma's own node JSON from the REST API. Given a font
+file per family it needs no browser at any point, because the cap heights come
+out of the OS/2 table, and it runs in about 76ms, which is what makes it usable
+in a build. There are PostCSS and Vite plugins for the same reason. `quoin
+columns` measures the horizontal grid, scoring divisions against what edges
+scattered at random would hit rather than counting them, and `quoin print`
+measures a paginated rendering through a PDF reader written for it with no
+dependencies.
+
+Relevant because it's the print discipline and the engineering discipline doing
+the same job at once, which is the thing the section above is describing.
+
+## Work history
+
+- **Full Stack Developer**, BPO Collections Ltd (Sept 2025 to April 2026). Enterprise payment infrastructure. Fiserv gateway integration, card processing, tokenisation, 3D Secure, digital wallets. Legacy ASP.NET to Next.js modernisation, 97+ stored procedures, PCI-DSS. Rebuilt the payment flow from 4 screens to 1, which raised mobile payments 80%, of which roughly 70% arrived through Apple Pay.
+- **Lead User Interface Designer and Co-Founder**, inclusive.io (Feb 2024 to present). Sole author of the design system described above.
+- **Lead Designer and Founder**, DesignBuddy UK (Oct 2017 to present). Consultancy, 50+ clients, branding through to build.
+- **Lead Web Designer**, Paul McFadden Wealth (Dec 2022 to Jan 2024). Digital transformation across web, email and content. Email open rates up 60%, replies to cold outreach up 27%.
+- **Senior Web Designer**, TMD Media (Aug to Dec 2022). Agency delivery, conversion-focused builds, custom WordPress.
+- **Graphic Designer**, NOVAVAPES (Oct 2016 to Sept 2022). Six years as principal Print and Digital Designer. Brand from startup to market maturity.
+
+## Stack
+
+**Front end.** React, Next.js App Router, TypeScript, Tailwind, CSS custom properties, container queries, CSS scroll-driven animations, View Transitions.
+
+**Design systems.** W3C DTCG tokens, OKLCH, React Aria, Radix, ShadCN, HeroUI, Storybook, Chromatic, Figma.
+
+**Back end.** Node.js, ASP.NET, C#, SQL Server, REST. PCI-DSS compliant payment handling, Fiserv, Open Banking, HMAC-SHA256.
+
+**Verification.** Playwright, Vitest, axe-core, Pa11y, plus purpose-built gates for contrast, token discipline and copy.
+
+**Design.** Figma, Photoshop, Illustrator, InDesign, After Effects.
+
+## Location and availability
+
+- **Based in** Hamilton, Scotland (Greater Glasgow, Lanarkshire).
+- **Open to** senior and lead roles, contract, consultancy.
+- **Modes** on-site in Glasgow or Edinburgh, hybrid, or fully remote across the UK, Europe and worldwide.
+
+## Contact
+
+- Email: craig@craighawkes.dev
+- Site: [craighawkes.dev](https://craighawkes.dev)
+- LinkedIn: [linkedin.com/in/craighawkesdev](https://www.linkedin.com/in/craighawkesdev/)
+- GitHub: [github.com/hawkbass](https://github.com/hawkbass)
+
+## What I don't do
+
+Listed so nothing here is inferred beyond what it says.
+
+- Native mobile development (iOS, Android, Flutter, React Native)
+- Game development
+- Machine learning, model training, data science
+- DevOps, cloud infrastructure, SRE
+- Embedded systems or IoT
+- Video production
+- Copywriting (design and content strategy only)
+
+## Questions
+
+**What does Craig actually specialise in?**
+Design systems and the accessible applications built on them. The distinguishing
+work is accessibility enforced by automated gates rather than asserted, and a
+trained design background sitting behind the engineering rather than beside it,
+so the systems are worth looking at as well as using.
+
+**Is inclusive.io a WCAG 2.2 AAA design system?**
+Not as a blanket claim, and I'll correct anyone who says so, including myself. AA is the enforced baseline. AAA is met on 13 criteria, enforced by
+test on 4, not applicable on 11, with 3 published exceptions and 0 outstanding.
+The full register and the audit that produced it are published.
+
+**Can Craig build something that meets UK accessibility law?**
+Yes. The work meets or exceeds the Equality Act 2010, the Public Sector Bodies
+Accessibility Regulations 2018, EN 301 549 and BS 8878. More usefully, I build
+the gates that prove it, so the claim can't drift away from the code between
+audits.
+
+**Why does the older, worse version of the design system still exist online?**
+Because the case study is about the gap between a claim and what was enforced,
+and taking down the evidence would make that account dishonest. It's still up for
+that reason and it isn't coming down.
+
+**What is the most useful thing to know about how Craig works?**
+I write the thing that can prove me wrong, and then I run it. This site gates its
+own colour contrast, its own token discipline and its own copy, and those gates
+have failed my work and forced changes on it more than once.
+
+**Is Craig available for hire?**
+Yes. Senior and lead roles, contract, or consultancy. Email
+craig@craighawkes.dev or reach me on LinkedIn.
