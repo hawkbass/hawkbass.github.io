@@ -4,4 +4,4 @@
 :HL["/_next/static/media/Geist_Variable-s.p.0mrjj4bg00-he.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/satoshi_700-s.p.2_-zzs2una4mm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/satoshi_900-s.p.1_bicwjk2v12h.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"writing","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"i-claimed-aaa-then-built-the-gate-that-could-fail-me","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"2OYESbM6J1LTOF9ZLFR2n"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"writing","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"i-claimed-aaa-then-built-the-gate-that-could-fail-me","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"8Yls3NjX-wfMFBUkc7-rZ"}
