@@ -135,15 +135,30 @@ What is actually hard, and why this is research rather than a wrapper:
   already corrected.
 - Corrections reach sideways too. In a flex row aligned to the end, growing any
   item moves its siblings, so seating the third item lifts two already-seated
-  ones back off. It sweeps until nothing moves. Three passes on this site.
+  ones back off. It sweeps until nothing moves. Five passes on this site.
 - `padding-top` can't move a flex child its parent centres, or an inline box.
   So every correction is re-measured and escalated to a relative offset, and
   blocks neither lever can move are reported as missed rather than counted.
 
 Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
-build if seating stops working: the homepage ends with 309 of its 318 text
-nodes on an 8px grid, the case study with 499 of 501, and the writing index
-takes all 60.
+build if seating stops working: the homepage ends with 47 of its 66 text nodes
+on an 8px grid, the case study with 93 of 106, and the writing index with 56 of
+58. Nothing is excluded from those counts, headlines included, even though the
+tool declines to snap display type by design.
+
+The homepage used to reach 97% and the 2026 redesign took it to 71%, which is
+the third bullet above turning up at full scale rather than anything breaking.
+Every section on that design is a full viewport tall with its content centred.
+Padding a block makes the block taller, a taller block makes the centred stack
+taller, and a taller stack moves its own centre up by half of what was just
+added, so the correction chases its own effect. The sweep converges after five
+passes and sits in the same place at thirty, and the residual drifts come in
+matched pairs of opposite sign, which is what a fixed point looks like from
+outside. The writing index is not centred and still reaches 97%. The number was
+kept rather than the layout changed to flatter it, because this is the argument
+the tool now makes for itself: a correction only ever describes the page it was
+measured against, and on a centred layout it cannot fully describe even that
+one. Fitting the design before the CSS exists is what replaced it.
 
 The starting counts are not published. They move every time a word on the
 page moves: the homepage came back 29, then 30, then 41 across three runs
