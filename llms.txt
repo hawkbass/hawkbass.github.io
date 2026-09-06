@@ -142,8 +142,8 @@ What is actually hard, and why this is research rather than a wrapper:
 
 Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
 build if seating stops working: the homepage ends with 53 of its 67 text nodes
-on an 8px grid, the case study with 99 of 107, and the writing index with 56 of
-59. Nothing is excluded from those counts, headlines included, even though the
+on an 8px grid, the case study with 99 of 107, and the writing index with 60 of
+63. Nothing is excluded from those counts, headlines included, even though the
 tool declines to snap display type by design.
 
 The homepage used to reach 97% and the 2026 redesign took it to 79%, which is
