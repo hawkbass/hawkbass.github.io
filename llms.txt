@@ -141,13 +141,14 @@ What is actually hard, and why this is research rather than a wrapper:
   blocks neither lever can move are reported as missed rather than counted.
 
 Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
-build if seating stops working: the homepage ends with 53 of its 67 text nodes
-on an 8px grid, the case study with 99 of 107, and the writing index with 60 of
-63. Nothing is excluded from those counts, headlines included, even though the
-tool declines to snap display type by design.
+build if seating stops working: the homepage ends with 216 of its 241 text
+nodes on an 8px grid, the case study with 169 of 172, and the writing index with
+54 of 57. Nothing is excluded from those counts, headlines included, even though
+the tool declines to snap display type by design.
 
-The homepage used to reach 97% and the 2026 redesign took it to 79%, which is
-the third bullet above turning up at full scale rather than anything breaking.
+The homepage reached 97% on the previous design and reads 90% on this one, and
+the gap is the third bullet above turning up at full scale rather than anything
+breaking.
 Every section on that design is a full viewport tall with its content centred.
 Padding a block makes the block taller, a taller block makes the centred stack
 taller, and a taller stack moves its own centre up by half of what was just
