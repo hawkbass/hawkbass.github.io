@@ -4,4 +4,4 @@
 :HL["/_next/static/chunks/3nx3aqx4f_15k.css","style"]
 :HL["/_next/static/chunks/334k_n8wzztsj.css","style"]
 :HL["/_next/static/chunks/1ocrcbijchrwx.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"work","param":null,"prefetchHints":4160,"slots":{"children":{"name":"bpo-payments","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"YVen67G4AoBNDHao6xblr"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"work","param":null,"prefetchHints":4160,"slots":{"children":{"name":"bpo-payments","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"Hk6NGJTLktS1JSLBfvstp"}

@@ -62,7 +62,7 @@ investigating AAA.
 - [Seven defects a gate found that reading the code did not](https://craighawkes.dev/writing/seven-defects-a-gate-found-that-reading-the-code-did-not): including three that passed a test pointed at the wrong element, and two that worked in exactly one environment.
 - [Portfolio source](https://github.com/hawkbass): the site itself gates its own contrast, tokens and copy. The workflow runs on demand rather than on every push, which is a billing decision, and the reason is written in the file.
 - [The payment case study](https://craighawkes.dev/work/bpo-payments): BPO Collections, an FCA-regulated debt collection firm. Hired for an accessibility rebuild, then asked whether I'd take the SagePay to Fiserv migration instead, which roughly half a dozen developers had started and none had taken as far as testing. The project was changed from the one to the other and I finished it solo. Apple Pay, Google Pay, 3D Secure, tokenisation, gateway credentials moved out of config and into the database, three runbooks with backout written before deployment. Mobile payments up 80% since launch, and 70% of those came directly through Apple Pay. Also states the actual UK legal position, which is that no statute names WCAG for a private financial firm: the duty is the Equality Act 2010 reasonable adjustments duty, with the FCA Consumer Duty sitting on top of it, and WCAG is the yardstick everyone recognises.
-- [Quoin](https://craighawkes.dev/quoin): the side research, with the corpus table, the specimen you can run, and the limits written down. Public and MIT at v1.17.0, source at https://github.com/hawkbass/quoin. The only thing on the site that is original research rather than client work.
+- [Quoin](https://craighawkes.dev/quoin): the side research, with the corpus table, the specimen you can run, and the limits written down. Public and MIT at v1.26.0, running live at https://quoin.craighawkes.dev, with the source at https://github.com/hawkbass/quoin. The only thing on the site that is original research rather than client work.
 - [The web can't do a baseline grid](https://craighawkes.dev/writing/the-web-cannot-do-a-baseline-grid): why line-height centres text in its box instead of seating it on a line, and what that costs a page.
 - [Three times I thought I had put the page on the grid](https://craighawkes.dev/writing/three-times-i-thought-the-page-was-on-the-grid): three corrections that measured clean and were not, including a verifier blind to its own fix because getBoundingClientRect returns the border box.
 - [My site came last in my own survey](https://craighawkes.dev/writing/ninety-down-to-ten): nine design systems measured for typographic coherence, mine finishing bottom at ninety distinct drift values, and what it took to get to ten.
@@ -115,8 +115,8 @@ systems the way I do.
 
 ## Quoin, the side research
 
-A baseline grid for the web. Public at github.com/hawkbass/quoin, v1.17.0, MIT,
-no dependencies. It does the job two ways: it fits a design to the grid before
+A baseline grid for the web, running live at quoin.craighawkes.dev. Public at
+github.com/hawkbass/quoin, v1.26.0, MIT, no dependencies. It does the job two ways: it fits a design to the grid before
 the CSS exists, and it corrects a page that has already rendered. Print has had
 baseline grids since metal type and it's a checkbox in InDesign. The web has
 never had one, because line-height centres text in its box rather than seating
