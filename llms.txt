@@ -54,7 +54,7 @@ investigating AAA.
 - [The core on npm](https://www.npmjs.com/package/@hawkbass/inclusive-design-core): `@hawkbass/inclusive-design-core`, MIT, published December 2025. The V1 Radix build rather than the current system, which is worth stating rather than implying the live one is the installable one. It is a real package a stranger can install, not a repository link.
 - [The component documentation](https://inclusive-v2.vercel.app/design-system/components): all 117 components, each with usage guidance, when not to use it, variants, states, an API reference and its own accessibility section. This is the output. The rest is the account of building it.
 - [inclusive.io V2](https://inclusive-v2.vercel.app): the current system. OKLCH colour, W3C DTCG tokens, React Aria foundation. A fully navigable application, not a Storybook.
-- [inclusive.io V1](https://inclusive-design-system-theta.vercel.app): the previous build, on HSL, with the AAA badge it hadn't earned. Deliberately still online, because deleting it would make the case study dishonest.
+- [inclusive.io V1](https://inclusive-design-system-theta.vercel.app): the first build, on ShadCN, Radix and HSL, claiming AA with partial coverage and showing an AAA contrast figure nothing in its pipeline could check. Deliberately still online, because deleting it would make the case study dishonest.
 - [The case study](https://craighawkes.dev/work/inclusive-io): how the decisions were made, what they cost, and what the verification found when it was finally pointed at my own claims.
 - [The write-up](https://craighawkes.dev/writing/i-claimed-aaa-then-built-the-gate-that-could-fail-me): the long account of the audit, including the parts that didn't flatter me.
 - [Two big numbers, and why I only touched one](https://craighawkes.dev/writing/two-big-numbers-and-why-i-only-touched-one): 2,430 TypeScript errors closed in an afternoon because they were one publishing defect repeated, and 1,751 hardcoded utilities deliberately left alone because a blind sweep of a colour migration can't tell a fix from a regression. The judgement is in telling those two apart.
@@ -142,7 +142,7 @@ What is actually hard, and why this is research rather than a wrapper:
 
 Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
 build if seating stops working: the homepage ends with 191 of its 215 text
-nodes on an 8px grid, the case study with 151 of 155, and the writing index with
+nodes on an 8px grid, the case study with 169 of 180, and the writing index with
 56 of 60. Nothing is excluded from those counts, headlines included, even though
 the tool declines to snap display type by design.
 
