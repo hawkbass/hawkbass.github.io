@@ -60,7 +60,7 @@ investigating AAA.
 - [Two big numbers, and why I only touched one](https://craighawkes.dev/writing/two-big-numbers-and-why-i-only-touched-one): 2,430 TypeScript errors closed in an afternoon because they were one publishing defect repeated, and 1,751 hardcoded utilities deliberately left alone because a blind sweep of a colour migration can't tell a fix from a regression. The judgement is in telling those two apart.
 - [Every build was green through all three configurations](https://craighawkes.dev/writing/every-build-was-green-through-all-three): a declaration strategy measured before adoption, which found 257 resolution errors that no build in any configuration had ever reported.
 - [Seven defects a gate found that reading the code did not](https://craighawkes.dev/writing/seven-defects-a-gate-found-that-reading-the-code-did-not): including three that passed a test pointed at the wrong element, and two that worked in exactly one environment.
-- [Portfolio source](https://github.com/hawkbass): the site itself gates its own contrast, tokens and copy. The workflow runs on demand rather than on every push, which is a billing decision, and the reason is written in the file.
+- [Portfolio source](https://github.com/hawkbass): the site itself gates its own contrast, tokens and copy. The gates run inside every production build, so a failing one stops the deploy. The GitHub workflow that also runs the end to end suite is on demand rather than on every push, which is a billing decision, and the reason is written in the file.
 - [The payment case study](https://craighawkes.dev/work/bpo-payments): BPO Collections, an FCA-regulated debt collection firm. Hired for an accessibility rebuild, then asked whether I'd take the SagePay to Fiserv migration instead, which roughly half a dozen developers had started and none had taken as far as testing. The project was changed from the one to the other and I finished it solo. Apple Pay, Google Pay, 3D Secure, tokenisation, gateway credentials moved out of config and into the database, three runbooks with backout written before deployment. Mobile payments up 80% since launch, and 70% of those came directly through Apple Pay. Also states the actual UK legal position, which is that no statute names WCAG for a private financial firm: the duty is the Equality Act 2010 reasonable adjustments duty, with the FCA Consumer Duty sitting on top of it, and WCAG is the yardstick everyone recognises.
 - [Quoin](https://craighawkes.dev/quoin): the side research, with the corpus table, the specimen you can run, and the limits written down. Public and MIT at v1.26.0, running live at https://quoin.craighawkes.dev, with the source at https://github.com/hawkbass/quoin. The only thing on the site that is original research rather than client work.
 - [The web can't do a baseline grid](https://craighawkes.dev/writing/the-web-cannot-do-a-baseline-grid): why line-height centres text in its box instead of seating it on a line, and what that costs a page.
@@ -141,12 +141,12 @@ What is actually hard, and why this is research rather than a wrapper:
   blocks neither lever can move are reported as missed rather than counted.
 
 Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
-build if seating stops working: the homepage ends with 191 of its 215 text
-nodes on an 8px grid, the case study with 169 of 180, and the writing index with
-56 of 60. Nothing is excluded from those counts, headlines included, even though
+build if seating stops working: the homepage ends with 228 of its 239 text
+nodes on an 8px grid, the case study with 186 of 197, and the writing index with
+56 of 61. Nothing is excluded from those counts, headlines included, even though
 the tool declines to snap display type by design.
 
-The homepage reached 97% on the previous design and reads 89% on this one, and
+The homepage reached 97% on the previous design and reads 94% on this one, and
 the gap is the third bullet above turning up at full scale rather than anything
 breaking.
 Every section on that design is a full viewport tall with its content centred.
@@ -263,12 +263,14 @@ the same job at once, which is the thing the section above is describing.
 
 ## Work history
 
-- **Full Stack Developer**, BPO Collections Ltd (Sept 2025 to April 2026). Enterprise payment infrastructure. Fiserv gateway integration, card processing, tokenisation, 3D Secure, digital wallets. Legacy ASP.NET to Next.js modernisation, 97+ stored procedures, PCI-DSS. Rebuilt the payment flow from 4 screens to 1, which raised mobile payments 80%, of which roughly 70% arrived through Apple Pay.
-- **Lead User Interface Designer and Co-Founder**, inclusive.io (Feb 2024 to present). Sole author of the design system described above.
-- **Lead Designer and Founder**, DesignBuddy UK (Oct 2017 to present). Consultancy, 50+ clients, branding through to build.
-- **Lead Web Designer**, Paul McFadden Wealth (Dec 2022 to Jan 2024). Digital transformation across web, email and content. Email open rates up 60%, replies to cold outreach up 27%.
+Titles and dates as the CV and the /work page give them, which read from the same file.
+
+- **Full Stack Developer**, BPO Collections Ltd (Sept 2025 to Apr 2026). Contract. Enterprise payment infrastructure. Fiserv gateway integration, card processing, tokenisation, 3D Secure, digital wallets. Legacy ASP.NET to Next.js modernisation, 97+ stored procedures, PCI-DSS. Rebuilt the payment flow from 4 screens to 1, which raised mobile payments 80%, of which roughly 70% arrived through Apple Pay.
+- **Co-founder & Design Systems Engineer**, inclusive.io (Feb 2024 to now). Hired to design the ATS, then co-founder. Sole author of the design system described above.
+- **Founder & Full-Stack Developer**, DesignBuddy UK (Oct 2017 to now). My own studio, 50+ clients, the brand and the build, and the scoping, pricing and pitching that come with running it.
+- **Head of Web**, Paul McFadden Wealth (Dec 2022 to Jan 2024). Ran the web department for a property education group and its partner businesses. Hired three of the team and co-managed seven: five videographers, a junior web designer and a social media intern. Email open rates up 60%, replies to cold outreach up 27%.
 - **Senior Web Designer**, TMD Media (Aug to Dec 2022). Agency delivery, conversion-focused builds, custom WordPress.
-- **Graphic Designer**, NOVAVAPES (Oct 2016 to Sept 2022). Six years as principal Print and Digital Designer. Brand from startup to market maturity.
+- **Graphic Designer**, NOVAVAPES (Oct 2016 to Sept 2022). Six years as principal Print and Digital Designer. Brand from startup to market maturity. Recruited and developed an apprentice from junior to running the social channel outright.
 
 ## Stack
 
@@ -285,7 +287,7 @@ the same job at once, which is the thing the section above is describing.
 ## Location and availability
 
 - **Based in** Hamilton, Scotland (Greater Glasgow, Lanarkshire).
-- **Open to** senior and lead roles, contract, consultancy.
+- **Open to** lead, principal, head of engineering or first technical leader roles, permanent or contract, and consultancy.
 - **Modes** on-site in Glasgow or Edinburgh, hybrid, or fully remote across the UK, Europe and worldwide.
 
 ## Contact

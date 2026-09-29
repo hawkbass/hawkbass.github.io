@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Craig Hawkes, writing</title>
+  <subtitle>Things I got wrong, mostly. Written when something turned out differently than I expected.</subtitle>
+  <link href="https://craighawkes.dev/writing/feed.xml" rel="self"/>
+  <link href="https://craighawkes.dev/writing"/>
+  <id>https://craighawkes.dev/writing</id>
+  <updated>2026-09-06T00:00:00.000Z</updated>
+  <author><name>Craig Hawkes</name></author>
+  <entry>
+    <title>Warm on purpose, and why I stopped trying to fit every screen at once</title>
+    <link href="https://craighawkes.dev/writing/warm-on-purpose-and-three-layouts"/>
+    <id>https://craighawkes.dev/writing/warm-on-purpose-and-three-layouts</id>
+    <published>2026-09-06T00:00:00.000Z</published>
+    <updated>2026-09-06T00:00:00.000Z</updated>
+    <summary>The umber and the orange are a choice, not a mood. I spent six years in print before I came back to code, and the site finally looks like both halves of that. The colour turned out to be the easy part. The hard one, the part I&apos;m in the middle of now, is that a layout which bends to fit every screen fits none of them properly, so I&apos;m building three.</summary>
+    <category term="Design"/>
+    <category term="Colour"/>
+    <category term="Platforms"/>
+  </entry>
+  <entry>
+    <title>The tool scored my site 100%, and nobody owns a phone that wide</title>
+    <link href="https://craighawkes.dev/writing/a-hundred-per-cent-at-six-widths"/>
+    <id>https://craighawkes.dev/writing/a-hundred-per-cent-at-six-widths</id>
+    <published>2026-09-02T00:00:00.000Z</published>
+    <updated>2026-09-02T00:00:00.000Z</updated>
+    <summary>I rebuilt Quoin&apos;s own site, ran the tool over it, and shipped it at a hundred per cent on the grid. That number was true at six viewport widths and nowhere else, and every phone anyone actually owns fell in the gap between them. The fix wasn&apos;t in the tool. It was four rules in the stylesheet, and they&apos;re rules any stylesheet can follow.</summary>
+    <category term="Typography"/>
+    <category term="CSS"/>
+    <category term="Tooling"/>
+  </entry>
+  <entry>
+    <title>Eight typefaces gave me the same number, and I read it as consistency</title>
+    <link href="https://craighawkes.dev/writing/eight-typefaces-gave-me-the-same-number"/>
+    <id>https://craighawkes.dev/writing/eight-typefaces-gave-me-the-same-number</id>
+    <published>2026-08-29T00:00:00.000Z</published>
+    <updated>2026-08-29T00:00:00.000Z</updated>
+    <summary>I published a finding about vertical Japanese text, backed by measurements in three browsers. Every one of those measurements was taken against a font that had never loaded, and the checks I ran to confirm it shared the same blind spot. Here&apos;s how a control that can&apos;t fail agrees with you three times in a row.</summary>
+    <category term="Typography"/>
+    <category term="Tooling"/>
+    <category term="Testing"/>
+  </entry>
+  <entry>
+    <title>My site came last in my own survey, so I went and fixed it</title>
+    <link href="https://craighawkes.dev/writing/ninety-down-to-ten"/>
+    <id>https://craighawkes.dev/writing/ninety-down-to-ten</id>
+    <published>2026-08-16T00:00:00.000Z</published>
+    <updated>2026-08-16T00:00:00.000Z</updated>
+    <summary>I measured nine design systems for typographic coherence and finished bottom, three times worse than anything else in the table. Here&apos;s what the ninety was made of, and what it took to get it to ten.</summary>
+    <category term="Typography"/>
+    <category term="Design systems"/>
+    <category term="CSS"/>
+  </entry>
+  <entry>
+    <title>The web can&apos;t do a baseline grid, and I got tired of pretending otherwise</title>
+    <link href="https://craighawkes.dev/writing/the-web-cannot-do-a-baseline-grid"/>
+    <id>https://craighawkes.dev/writing/the-web-cannot-do-a-baseline-grid</id>
+    <published>2026-08-15T00:00:00.000Z</published>
+    <updated>2026-08-15T00:00:00.000Z</updated>
+    <summary>Every font hides asymmetric space above its capitals. The browser splits the leftover leading evenly, so it centres the box and not the letters. Print solved this with metal type. Here&apos;s why the web can&apos;t, and the start of the tool that now corrects it.</summary>
+    <category term="Typography"/>
+    <category term="Design systems"/>
+    <category term="Tooling"/>
+  </entry>
+  <entry>
+    <title>Three times I thought I&apos;d put the page on the grid</title>
+    <link href="https://craighawkes.dev/writing/three-times-i-thought-the-page-was-on-the-grid"/>
+    <id>https://craighawkes.dev/writing/three-times-i-thought-the-page-was-on-the-grid</id>
+    <published>2026-08-15T00:00:00.000Z</published>
+    <updated>2026-08-15T00:00:00.000Z</updated>
+    <summary>Finding every line of text that misses a baseline grid is arithmetic. Putting a whole page onto one is a constraint problem, and I got it wrong three times in a row, starting with a tool that couldn&apos;t see its own corrections.</summary>
+    <category term="Typography"/>
+    <category term="Tooling"/>
+    <category term="CSS"/>
+  </entry>
+  <entry>
+    <title>Two big numbers, and why I only touched one of them</title>
+    <link href="https://craighawkes.dev/writing/two-big-numbers-and-why-i-only-touched-one"/>
+    <id>https://craighawkes.dev/writing/two-big-numbers-and-why-i-only-touched-one</id>
+    <published>2026-08-09T00:00:00.000Z</published>
+    <updated>2026-08-09T00:00:00.000Z</updated>
+    <summary>2,430 TypeScript errors went to zero in an afternoon. 1,751 hardcoded utilities are still sitting there, and leaving them was the same decision as fixing the others, not the opposite one.</summary>
+    <category term="Design systems"/>
+    <category term="Refactoring"/>
+    <category term="Judgement"/>
+  </entry>
+  <entry>
+    <title>Every build was green through all three configurations</title>
+    <link href="https://craighawkes.dev/writing/every-build-was-green-through-all-three"/>
+    <id>https://craighawkes.dev/writing/every-build-was-green-through-all-three</id>
+    <published>2026-08-09T00:00:00.000Z</published>
+    <updated>2026-08-09T00:00:00.000Z</updated>
+    <summary>TypeScript 7 broke the declaration build, so I reached for the obvious fallback. Then I measured it before adopting it, and found 257 resolution errors that no build, in any of the three configurations, had ever reported.</summary>
+    <category term="TypeScript"/>
+    <category term="Tooling"/>
+    <category term="Design systems"/>
+  </entry>
+  <entry>
+    <title>Seven defects a gate found that reading the code didn&apos;t</title>
+    <link href="https://craighawkes.dev/writing/seven-defects-a-gate-found-that-reading-the-code-did-not"/>
+    <id>https://craighawkes.dev/writing/seven-defects-a-gate-found-that-reading-the-code-did-not</id>
+    <published>2026-08-09T00:00:00.000Z</published>
+    <updated>2026-08-09T00:00:00.000Z</updated>
+    <summary>Every one of these was in code I&apos;d written, reviewed and shipped. None of them surfaced until something existed whose only job was to fail me.</summary>
+    <category term="Accessibility"/>
+    <category term="Testing"/>
+    <category term="Design systems"/>
+  </entry>
+  <entry>
+    <title>I claimed AAA, then built the gate that could fail me</title>
+    <link href="https://craighawkes.dev/writing/i-claimed-aaa-then-built-the-gate-that-could-fail-me"/>
+    <id>https://craighawkes.dev/writing/i-claimed-aaa-then-built-the-gate-that-could-fail-me</id>
+    <published>2026-08-06T00:00:00.000Z</published>
+    <updated>2026-08-06T00:00:00.000Z</updated>
+    <summary>A design system I&apos;d described as WCAG 2.2 AAA for months turned out to have an accessibility suite that never once loaded the 7:1 contrast rule. Here&apos;s what the gate found when I finally wrote it, and why the number that mattered wasn&apos;t the one I expected.</summary>
+    <category term="Accessibility"/>
+    <category term="Design systems"/>
+    <category term="Testing"/>
+  </entry>
+</feed>

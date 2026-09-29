@@ -1,0 +1,13 @@
+# Security contact for craighawkes.dev, in the format RFC 9116 describes.
+#
+# The site takes no payments and holds no accounts, so the most likely report
+# is a header, a dependency or something in the markup. Written up and fixed in
+# public, the way everything else on this site is.
+#
+# The Expires line is checked by e2e/standard-files.spec.ts, which fails the
+# suite once it is less than a month away, so this file cannot quietly lapse.
+
+Contact: mailto:craig@craighawkes.dev
+Expires: 2027-09-24T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://craighawkes.dev/.well-known/security.txt
