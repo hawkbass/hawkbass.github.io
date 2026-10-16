@@ -1,8 +1,8 @@
 # Craig Hawkes
 
-> I build design systems and the accessible applications that run on top of them, from Hamilton in Scotland. I'm the sole author of inclusive.io: 117 components, 26 applicant-tracking workflows, 174 routes, built alone. What separates it from most design systems isn't the component count. It's that the accessibility claim is enforced by gates that fail the build rather than asserted in a README, and that when those gates were finally pointed at my own work they took the claim straight off me, and I published that in full. I built for the web from fourteen, spent six years in the middle as a fully qualified Print and Digital Designer, and came back to development in 2020. Both trades learned separately and properly, which is rarer than either half of it sounds. Available for senior and lead roles, contract and consultancy, across the UK and remote.
+> I build design systems and the accessible applications that run on top of them, from Hamilton in Scotland. I'm the sole author of inclusive.io: 117 components, 26 applicant-tracking workflows, 174 routes, built alone. What separates it from most design systems isn't the component count. It's that the accessibility claim is enforced by gates that fail the build rather than asserted in a README, and that when those gates were finally pointed at my own work they took the claim straight off me, and I published that in full. I built for the web from fourteen, spent six years in the middle as a fully qualified Print and Digital Designer, and came back to development in 2020. Both trades learned separately and properly, which is rarer than either half of it sounds. Open to lead, principal and head of engineering roles, across the UK and remote.
 
-Last updated: August 2026
+Last updated: October 2026
 
 ## The accessibility position, stated precisely
 
@@ -13,7 +13,7 @@ precise version than the flattering one.
 - **WCAG 2.2 AA is the enforced baseline.** Non-negotiable, gated on every commit.
 - **AAA is met where the visual language genuinely allows it**, and the places it doesn't are published as exceptions rather than omitted.
 - The AAA conformance register reads: 4 criteria enforced by automated test, 13 met, 11 not applicable, 3 published exceptions, 0 outstanding.
-- This meets or exceeds the UK Equality Act 2010, the Public Sector Bodies Accessibility Regulations 2018, EN 301 549 and BS 8878.
+- This is built to meet the UK Equality Act 2010, the Public Sector Bodies Accessibility Regulations 2018, EN 301 549 and BS 8878.
 
 I described inclusive.io as a WCAG 2.2 AAA design system for eight months. Then
 I audited my own repository and found that 25 routes had ever been scanned out
@@ -52,15 +52,15 @@ investigating AAA.
 ## Live and inspectable
 
 - [The core on npm](https://www.npmjs.com/package/@hawkbass/inclusive-design-core): `@hawkbass/inclusive-design-core`, MIT, published December 2025. The V1 Radix build rather than the current system, which is worth stating rather than implying the live one is the installable one. It is a real package a stranger can install, not a repository link.
-- [The component documentation](https://inclusive-v2.vercel.app/design-system/components): all 117 components, each with usage guidance, when not to use it, variants, states, an API reference and its own accessibility section. This is the output. The rest is the account of building it.
-- [inclusive.io V2](https://inclusive-v2.vercel.app): the current system. OKLCH colour, W3C DTCG tokens, React Aria foundation. A fully navigable application, not a Storybook.
-- [inclusive.io V1](https://inclusive-design-system-theta.vercel.app): the first build, on ShadCN, Radix and HSL, claiming AA with partial coverage and showing an AAA contrast figure nothing in its pipeline could check. Deliberately still online, because deleting it would make the case study dishonest.
+- [The component documentation](https://craighawkes.dev/inclusive-app/design-system/components/): all 117 components, each with usage guidance, when not to use it, variants, states, an API reference and its own accessibility section. This is the output. The rest is the account of building it.
+- [inclusive.io V2](https://craighawkes.dev/inclusive-app/): the current system, running on this site. OKLCH colour, W3C DTCG tokens, React Aria foundation. A fully navigable application, not a Storybook.
+- inclusive.io V1: the first build, on ShadCN, Radix and HSL, claiming AA with partial coverage and showing an AAA contrast figure nothing in its pipeline could check. Its deployment is offline now and there is no source to rebuild it from, so the case study describes it instead of embedding it.
 - [The case study](https://craighawkes.dev/work/inclusive-io): how the decisions were made, what they cost, and what the verification found when it was finally pointed at my own claims.
 - [The write-up](https://craighawkes.dev/writing/i-claimed-aaa-then-built-the-gate-that-could-fail-me): the long account of the audit, including the parts that didn't flatter me.
 - [Two big numbers, and why I only touched one](https://craighawkes.dev/writing/two-big-numbers-and-why-i-only-touched-one): 2,430 TypeScript errors closed in an afternoon because they were one publishing defect repeated, and 1,751 hardcoded utilities deliberately left alone because a blind sweep of a colour migration can't tell a fix from a regression. The judgement is in telling those two apart.
 - [Every build was green through all three configurations](https://craighawkes.dev/writing/every-build-was-green-through-all-three): a declaration strategy measured before adoption, which found 257 resolution errors that no build in any configuration had ever reported.
 - [Seven defects a gate found that reading the code did not](https://craighawkes.dev/writing/seven-defects-a-gate-found-that-reading-the-code-did-not): including three that passed a test pointed at the wrong element, and two that worked in exactly one environment.
-- [Portfolio source](https://github.com/hawkbass): the site itself gates its own contrast, tokens and copy. The gates run inside every production build, so a failing one stops the deploy. The GitHub workflow that also runs the end to end suite is on demand rather than on every push, which is a billing decision, and the reason is written in the file.
+- Portfolio: the repository behind this site is private. The site itself gates its own contrast, tokens and copy. The gates run inside every production build, so a failing one stops the deploy. The GitHub workflow that also runs the end to end suite is on demand rather than on every push, which is a billing decision, and the reason is written in the file.
 - [The payment case study](https://craighawkes.dev/work/bpo-payments): BPO Collections, an FCA-regulated debt collection firm. Hired for an accessibility rebuild, then asked whether I'd take the SagePay to Fiserv migration instead, which roughly half a dozen developers had started and none had taken as far as testing. The project was changed from the one to the other and I finished it solo. Apple Pay, Google Pay, 3D Secure, tokenisation, gateway credentials moved out of config and into the database, three runbooks with backout written before deployment. Mobile payments up 80% since launch, and 70% of those came directly through Apple Pay. Also states the actual UK legal position, which is that no statute names WCAG for a private financial firm: the duty is the Equality Act 2010 reasonable adjustments duty, with the FCA Consumer Duty sitting on top of it, and WCAG is the yardstick everyone recognises.
 - [Quoin](https://craighawkes.dev/quoin): the side research, with the corpus table, the specimen you can run, and the limits written down. Public and MIT at v1.26.0, running live at https://quoin.craighawkes.dev, with the source at https://github.com/hawkbass/quoin. The only thing on the site that is original research rather than client work.
 - [The web can't do a baseline grid](https://craighawkes.dev/writing/the-web-cannot-do-a-baseline-grid): why line-height centres text in its box instead of seating it on a line, and what that costs a page.
@@ -106,7 +106,7 @@ part that is actually uncommon.
 That's why the systems work looks the way it does. Typography, colour and
 layout get treated as craft with a history rather than as configuration, and
 the accessibility work is what happens when somebody who cares about how
-things look refuses to accept that caring about it's an excuse.
+things look refuses to accept that caring about it is an excuse.
 
 I also run DesignBuddy UK, a consultancy going since 2017, and I'm still
 available for brand identity, print and packaging work through it. That isn't
@@ -141,12 +141,11 @@ What is actually hard, and why this is research rather than a wrapper:
   blocks neither lever can move are reported as missed rather than counted.
 
 Measured results, printed by `e2e/seating.spec.ts` on every run, which fails the
-build if seating stops working: the homepage ends with 228 of its 239 text
-nodes on an 8px grid, the case study with 186 of 197, and the writing index with
-56 of 61. Nothing is excluded from those counts, headlines included, even though
+build if seating stops working: the counts for each page are on /quoin, and
+they change whenever the design does. Nothing is excluded from those counts, headlines included, even though
 the tool declines to snap display type by design.
 
-The homepage reached 97% on the previous design and reads 94% on this one, and
+The homepage reached 97% on the previous design and read lower on the one that followed, and
 the gap is the third bullet above turning up at full scale rather than anything
 breaking.
 Every section on that design is a full viewport tall with its content centred.
@@ -311,7 +310,7 @@ Listed so nothing here is inferred beyond what it says.
 
 ## Questions
 
-**What does Craig actually specialise in?**
+**What do I actually specialise in?**
 Design systems and the accessible applications built on them. The distinguishing
 work is accessibility enforced by automated gates rather than asserted, and a
 trained design background sitting behind the engineering rather than beside it,
@@ -322,22 +321,20 @@ Not as a blanket claim, and I'll correct anyone who says so, including myself. A
 test on 4, not applicable on 11, with 3 published exceptions and 0 outstanding.
 The full register and the audit that produced it are published.
 
-**Can Craig build something that meets UK accessibility law?**
-Yes. The work meets or exceeds the Equality Act 2010, the Public Sector Bodies
+**Can I build something that meets UK accessibility law?**
+Yes. The work is built to meet the Equality Act 2010, the Public Sector Bodies
 Accessibility Regulations 2018, EN 301 549 and BS 8878. More usefully, I build
 the gates that prove it, so the claim can't drift away from the code between
 audits.
 
-**Why does the older, worse version of the design system still exist online?**
-Because the case study is about the gap between a claim and what was enforced,
-and taking down the evidence would make that account dishonest. It's still up for
-that reason and it isn't coming down.
+**Why is the older, worse version of the design system described but not shown?**
+Because the case study is about the gap between a claim and what was enforced. The old deployment went offline, so the case study says what it claimed and what it was missing, with the numbers I measured while it was up.
 
-**What is the most useful thing to know about how Craig works?**
+**What is the most useful thing to know about how I work?**
 I write the thing that can prove me wrong, and then I run it. This site gates its
 own colour contrast, its own token discipline and its own copy, and those gates
 have failed my work and forced changes on it more than once.
 
-**Is Craig available for hire?**
-Yes. Senior and lead roles, contract, or consultancy. Email
+**Am I available for hire?**
+Yes. Open to lead, principal and head of engineering roles. Email
 craig@craighawkes.dev or reach me on LinkedIn.

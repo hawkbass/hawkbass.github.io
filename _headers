@@ -1,0 +1,80 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://i.scdn.co; font-src 'self' data:; media-src 'self' https://*.scdn.co; connect-src 'self' https://now-playing.craig-hawkes.workers.dev https://cloudflareinsights.com; frame-src 'self'; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
+
+/writing/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+
+/inclusive-app/apple-icon
+  Content-Type: image/png
+
+/inclusive-app/opengraph-image
+  Content-Type: image/png
+
+/opengraph-image
+  Content-Type: image/png
+
+/quoin/opengraph-image
+  Content-Type: image/png
+
+/twitter-image
+  Content-Type: image/png
+
+/work/bpo-payments/opengraph-image
+  Content-Type: image/png
+
+/work/inclusive-io/opengraph-image
+  Content-Type: image/png
+
+/writing/a-hundred-per-cent-at-six-widths/opengraph-image
+  Content-Type: image/png
+
+/writing/eight-typefaces-gave-me-the-same-number/opengraph-image
+  Content-Type: image/png
+
+/writing/every-build-was-green-through-all-three/opengraph-image
+  Content-Type: image/png
+
+/writing/i-claimed-aaa-then-built-the-gate-that-could-fail-me/opengraph-image
+  Content-Type: image/png
+
+/writing/ninety-down-to-ten/opengraph-image
+  Content-Type: image/png
+
+/writing/seven-defects-a-gate-found-that-reading-the-code-did-not/opengraph-image
+  Content-Type: image/png
+
+/writing/the-web-cannot-do-a-baseline-grid/opengraph-image
+  Content-Type: image/png
+
+/writing/three-times-i-thought-the-page-was-on-the-grid/opengraph-image
+  Content-Type: image/png
+
+/writing/two-big-numbers-and-why-i-only-touched-one/opengraph-image
+  Content-Type: image/png
+
+/writing/warm-on-purpose-and-three-layouts/opengraph-image
+  Content-Type: image/png
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-desk/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-screen/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/inclusive-app/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/inclusive-app/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

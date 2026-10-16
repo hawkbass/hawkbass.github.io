@@ -1,0 +1,5 @@
+/v2 / 301
+/v2/* / 301
+/demo/* /inclusive-app/demo/:splat 200
+/cv.pdf /craig-hawkes-cv-fullstack.pdf 302
+/craig-hawkes-design-cv.pdf /craig-hawkes-cv-fullstack.pdf 302

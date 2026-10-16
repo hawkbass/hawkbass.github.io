@@ -1,0 +1,1293 @@
+<!doctype html>
+<!-- My Designs. My portfolio, built by hand in one file. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script src="/design-switch.js"></script>
+<title>Craig Hawkes | Lead Developer &amp; Engineering Leadership</title>
+<meta name="description" content="I build the system, the product that sits on top of it, and the gates that hold both. Fifteen years, developer first: Head of Web accountable for eight figures of web revenue, a payment migration on an FCA-regulated estate that six developers had tried, and a 117-component design system with its accessibility gated by tests. Hamilton, Scotland.">
+<link rel="canonical" href="https://craighawkes.dev/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="author" content="Craig Hawkes">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://craighawkes.dev/">
+<meta property="og:site_name" content="Craig Hawkes">
+<meta property="og:title" content="Craig Hawkes | Lead Developer &amp; Engineering Leadership">
+<meta property="og:description" content="I build the system, the product that sits on top of it, and the gates that hold both. Head of Web for eight figures of web revenue, a payment migration six developers had tried, and a 117-component design system with its accessibility gated by tests.">
+<meta property="og:image" content="https://craighawkes.dev/opengraph-image">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Craig Hawkes | Lead Developer &amp; Engineering Leadership">
+<meta name="twitter:description" content="I build the system, the product that sits on top of it, and the gates that hold both. Head of Web for eight figures of web revenue, a payment migration six developers had tried, and a 117-component design system with its accessibility gated by tests.">
+<meta name="twitter:image" content="https://craighawkes.dev/twitter-image">
+<style>/* The same cross-fade the rest of the site uses between pages, so arriving here from an inner page completes instead of aborting. Off under reduced motion. */@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}@media (forced-colors:active){.navpill a[aria-current=true],.tabs a[aria-current=true]{forced-color-adjust:none;background:Highlight;color:HighlightText}}
+</style>
+<script>/* Served from this site, not Google: nothing third-party runs on this page. The faces are asked for once the first frame is up, so they never race the page itself; the metric-matched stand-ins below hold the layout still until they land. */addEventListener("DOMContentLoaded",()=>requestAnimationFrame(()=>setTimeout(()=>{const st=document.createElement("style");st.textContent="@font-face{font-family:\"Inter Tight\";src:url(/one-screen/fonts/inter-tight.woff2) format(\"woff2\");font-weight:400 900;font-style:normal;font-display:swap}\n@font-face{font-family:\"Newsreader\";src:url(/one-screen/fonts/newsreader.woff2) format(\"woff2\");font-weight:400 600;font-style:normal;font-display:swap}\n@font-face{font-family:\"Newsreader\";src:url(/one-screen/fonts/newsreader-italic.woff2) format(\"woff2\");font-weight:400 500;font-style:italic;font-display:swap}";document.head.append(st)},0)))</script>
+<noscript><style>@font-face{font-family:"Inter Tight";src:url(/one-screen/fonts/inter-tight.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(/one-screen/fonts/newsreader.woff2) format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(/one-screen/fonts/newsreader-italic.woff2) format("woff2");font-weight:400 500;font-style:italic;font-display:swap}</style></noscript>
+<style>
+/* metric-matched stand-ins so the swap to the real faces moves nothing */
+@font-face{font-family:"Inter Tight Fb";src:local("Arial");font-weight:100 900;size-adjust:99%;ascent-override:97%;descent-override:24%;line-gap-override:0%}
+@font-face{font-family:"Newsreader Fb";src:local("Georgia");font-weight:100 900;size-adjust:91%;ascent-override:96%;descent-override:30%;line-gap-override:0%}
+@font-face{font-family:"Newsreader Fb";src:local("Georgia Italic"),local("Georgia-Italic");font-style:italic;font-weight:100 900;size-adjust:88%;ascent-override:96%;descent-override:30%;line-gap-override:0%}
+:root{
+  --u:1; --U:min(calc(100vw/1440),calc(100vh/900)); --fw:min(100vw,calc(1944*var(--U))); --fl:calc((100vw - var(--fw))/2); --nf:min(15vw,25vh);
+  --ease:cubic-bezier(.22,1,.36,1); --d1:700ms; --d2:1300ms;
+  /* the one exception to the single curve: objects arriving at rest */
+  --spring:linear(0, .009, .035 2.1%, .141 4.4%, .723 12.9%, .938 16.7%, 1.017 19.4%, 1.061 22.2%, 1.074 25%, 1.063 28.2%, 1.01 36.1%, .992 41%, .986 45.8%, .998 61.1%, 1); --d-spring:700ms;
+  --sans:"Inter Tight","Inter Tight Fb",Arial,sans-serif;
+  --serif:"Newsreader","Newsreader Fb",Georgia,"Times New Roman",serif;
+  /* grounds, strict pairs: ground + one ink */
+  --cream:oklch(0.955 0.022 80);  --rust:oklch(0.37 0.125 33);
+  --sand:oklch(0.885 0.06 72);    --brown:oklch(0.27 0.045 45);
+  --peach:oklch(0.93 0.045 65);
+  --night:oklch(0.205 0.02 45);   --amber:oklch(0.8 0.13 62);
+  --plum:oklch(0.25 0.065 330);   --orchid:oklch(0.87 0.07 330);
+  --yolk:oklch(0.885 0.15 95);    --soot:oklch(0.24 0.03 80);
+  --paper:oklch(0.975 0.01 85);   --ink:oklch(0.2 0.018 45);
+  --g:var(--cream); --f:var(--rust); --to:1;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{background:var(--cream);color:var(--rust);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+/* a keyboard user's Tab jumps straight to the next control; a smooth scroll lets the next Tab land before the scene it is in has appeared */
+body{margin:0;font:400 17px/1.55 var(--serif);overflow-x:clip;hyphens:none;-webkit-hyphens:none;overflow-wrap:normal;word-break:normal;background:var(--cream)}
+h1,h2,h3,p,blockquote,figure,ul,ol,dl{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid currentColor;outline-offset:3px;border-radius:6px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0;margin:-1px}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--rust);color:var(--cream);padding:14px 18px;font:700 16px var(--sans);border-radius:999px;min-height:48px}
+.skip:focus{top:16px}
+
+/* ---------- grounds ---------- */
+.scene{position:relative}
+.stage{position:relative;overflow:hidden;color:var(--fg);background:var(--bg)}
+.stage::before{content:"";position:absolute;inset:0;background:var(--grain);opacity:.32;mix-blend-mode:multiply;pointer-events:none;z-index:0}
+.g-cream{--bg:var(--cream);--fg:var(--rust)}
+.g-sand{--bg:var(--sand);--fg:var(--brown)}
+.g-rust{--bg:var(--rust);--fg:var(--peach)}
+.g-night{--bg:var(--night);--fg:var(--amber)}
+.g-plum{--bg:var(--plum);--fg:var(--orchid)}
+.g-yolk{--bg:var(--yolk);--fg:var(--soot)}
+.g-rust .stage::before,.g-night .stage::before,.g-plum .stage::before{mix-blend-mode:screen;opacity:.16}
+.grain,.veil{display:none}
+
+.kick{font:700 13px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:.8em;align-items:center}
+.kick::before{content:"";width:28px;height:2px;background:currentColor;flex:none}
+.disp{font:800 40px/1.02 var(--sans);letter-spacing:-.03em}
+.mega{font:900 150px/.8 var(--sans);letter-spacing:-.036em}
+.body{font:400 18px/1.55 var(--serif)}
+.quote{font:italic 400 22px/1.4 var(--serif)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 24px;border-radius:999px;font:700 16px/1 var(--sans);text-decoration:none;border:2px solid currentColor;transition:background var(--d1) var(--ease),color var(--d1) var(--ease)}
+.btn.solid{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.solid:hover{background:transparent;color:var(--fg)}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- top nav (desktop) and contact pill ---------- */
+.top{position:fixed;z-index:60;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.top a,.top nav{pointer-events:auto}
+.brand,.navpill{background:var(--cream);color:var(--rust);border-radius:999px;box-shadow:0 8px 30px -12px oklch(0.25 0.06 40 / .45)}
+.brand{font:800 16px/1 var(--sans);letter-spacing:-.02em;text-decoration:none;min-height:48px;padding:0 20px;display:inline-flex;align-items:center}
+.navpill{display:flex;padding:2px}
+.navpill a{font:600 14px/1 var(--sans);text-decoration:none;min-height:44px;padding:0 14px;display:inline-flex;align-items:center;border-radius:999px;overflow:hidden;position:relative}
+.roll{display:inline-block;position:relative;line-height:1.25;height:1.25em;overflow:hidden}
+.roll>span{display:block;transition:transform var(--d1) var(--ease)}
+.roll>span+span{position:absolute;left:0;top:100%}
+.navpill a:hover .roll>span,.navpill a:focus-visible .roll>span{transform:translateY(-100%)}
+.navpill a[aria-current=true]{background:var(--rust);color:var(--cream)}
+.hire{position:fixed;z-index:60;right:20px;bottom:20px;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 24px 0 18px;border-radius:999px;background:var(--rust);color:var(--cream);border:2px solid var(--cream);font:800 16px/1 var(--sans);text-decoration:none;box-shadow:0 14px 40px -14px oklch(0.25 0.08 35 / .7)}
+.hire i{width:10px;height:10px;border-radius:50%;background:oklch(0.86 0.15 145);box-shadow:0 0 0 4px oklch(0.86 0.15 145 / .25)}
+.tabs{display:none}
+.desk-switch{position:fixed;z-index:60;left:20px;bottom:20px;display:inline-flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;padding:7px 22px;border-radius:999px;background:var(--cream);color:var(--rust);border:2px solid var(--rust);text-decoration:none;box-shadow:0 14px 40px -14px oklch(0.25 0.08 35 / .5);font:800 16px/1.05 var(--sans)}
+.hire.stepaside,.desk-switch.stepaside{transform:translateY(140%)!important;opacity:0!important;pointer-events:none}
+.desk-switch small{font:800 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.desk-switch:hover{background:var(--rust);color:var(--cream)}
+
+/* ---------- phone ---------- */
+.phone{--shx:0px;--shy:40px;--sb:1;--so:1;position:relative;width:414px;height:868px;border-radius:68px;padding:12px;
+  background:linear-gradient(140deg,oklch(0.5 0.015 60),oklch(0.24 0.012 50) 28%,oklch(0.34 0.014 55) 62%,oklch(0.19 0.01 50));
+  box-shadow:inset 0 0 0 1.5px oklch(0.62 0.02 60),inset 0 0 0 6px oklch(0.15 0.01 50),
+    var(--shx) var(--shy) calc(50px*var(--sb)) -8px oklch(0.22 0.06 40 / calc(.42*var(--so))),
+    calc(var(--shx)*2.4) calc(var(--shy)*2.4) calc(110px*var(--sb)) -20px oklch(0.22 0.06 40 / calc(.34*var(--so)));
+  transform-origin:50% 50%}
+.phone .btn-side{position:absolute;width:4px;border-radius:2px;background:oklch(0.3 0.012 55)}
+.phone .b1{left:-3px;top:180px;height:34px}.phone .b2{left:-3px;top:240px;height:64px}.phone .b3{left:-3px;top:316px;height:64px}.phone .b4{right:-3px;top:260px;height:100px}
+.screen{position:relative;width:390px;height:844px;border-radius:56px;overflow:hidden;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+.island{position:absolute;z-index:9;top:11px;left:50%;width:122px;height:35px;margin-left:-61px;border-radius:20px;background:oklch(0.12 0.005 50)}
+.gloss{position:absolute;inset:12px;border-radius:56px;pointer-events:none;z-index:10;background:linear-gradient(115deg,oklch(1 0 0 / .16),transparent 26%,transparent 70%,oklch(1 0 0 / .06))}
+.status{position:absolute;z-index:8;top:0;left:0;right:0;height:52px;display:flex;justify-content:space-between;align-items:center;padding:6px 34px 0 42px;font:700 16px/1 var(--sans);color:var(--sc,var(--ink))}
+.status .sig{display:flex;gap:3px;align-items:flex-end}
+.status .sig b{width:4px;background:currentColor;border-radius:1px}
+.status .bat{width:26px;height:12px;border:2px solid currentColor;border-radius:4px;padding:1px;margin-left:6px}
+.status .bat::after{content:"";display:block;height:100%;width:70%;background:currentColor;border-radius:1px}
+.scr{position:absolute;inset:0;visibility:hidden;opacity:0;transition:opacity 450ms var(--ease),visibility 0s 450ms}
+.scr.on{visibility:visible;opacity:1;transition:opacity 450ms var(--ease),visibility 0s}
+
+/* pay screen */
+.pay{padding:62px 22px 22px;display:flex;flex-direction:column;gap:14px;background:var(--paper)}
+.pay-h{display:flex;justify-content:space-between;align-items:center}
+.pay-h b{font:800 22px/1.1 var(--sans);letter-spacing:-.02em}
+.tag{font:800 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:8px;background:var(--rust);color:var(--cream)}
+.acct{display:flex;justify-content:space-between;align-items:baseline;padding:14px 16px;border-radius:18px;background:oklch(0.93 0.02 75);font:500 15px/1.3 var(--sans)}
+.acct strong{font:800 20px/1 var(--sans);font-variant-numeric:tabular-nums}
+.amts{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:8px}
+.amts legend{font:700 13px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;padding:0}
+.chip{position:relative;display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:16px;border:2px solid oklch(0.82 0.03 70);font:700 17px/1 var(--sans)}
+.chip input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.chip:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip:has(input:focus-visible){outline:3px solid var(--rust);outline-offset:2px}
+.big{display:block;font:900 64px/1 var(--sans);letter-spacing:-.04em;text-align:center;padding:6px 0 2px;font-variant-numeric:tabular-nums}
+/* buttons with real travel: they sit on a ledge and go down onto it */
+.wallet,.paybtn{position:relative;min-height:58px;border-radius:16px;border:0;font:700 19px/1 var(--sans);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;overflow:hidden;transform:translateY(0);transition:transform 90ms var(--ease),box-shadow 90ms var(--ease)}
+.wallet{background:var(--ink);color:var(--paper);box-shadow:0 6px 0 oklch(0.1 0.01 45),0 14px 20px -10px oklch(0.2 0.03 45 / .6)}
+.paybtn{background:var(--rust);color:var(--cream);font-weight:800;box-shadow:0 6px 0 oklch(0.26 0.09 33),0 14px 20px -10px oklch(0.3 0.1 33 / .6)}
+.wallet:active,.wallet.press{transform:translateY(5px);box-shadow:0 1px 0 oklch(0.1 0.01 45),0 4px 8px -6px oklch(0.2 0.03 45 / .6)}
+.paybtn:active,.paybtn.press{transform:translateY(5px);box-shadow:0 1px 0 oklch(0.26 0.09 33),0 4px 8px -6px oklch(0.3 0.1 33 / .6)}
+.wallet svg{width:22px;height:22px}
+.working::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:100%;background:currentColor;transform-origin:0 50%;animation:beat 480ms var(--ease) forwards}
+@keyframes beat{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.busy .chip{pointer-events:none}
+.or{display:flex;align-items:center;gap:10px;font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.or::before,.or::after{content:"";flex:1;height:1px;background:oklch(0.8 0.02 70)}
+.card{border-radius:18px;padding:14px 16px;background-color:var(--rust);background-image:linear-gradient(135deg,oklch(0.36 0.11 33),oklch(0.27 0.07 35));color:var(--cream);display:grid;gap:6px}
+.card .num{font:700 20px/1 var(--sans);letter-spacing:.12em;font-variant-numeric:tabular-nums}
+.card .meta{display:flex;justify-content:space-between;font:600 14px/1 var(--sans)}
+.card .lk{font:500 13px/1.35 var(--sans);display:flex;gap:8px;align-items:flex-start}
+.fine{font:500 13px/1.4 var(--sans);text-align:center}
+.done{position:absolute;inset:0;background:var(--paper);padding:66px 22px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;visibility:hidden;opacity:0;transform:translateY(16px);transition:opacity 400ms var(--ease),transform 400ms var(--ease),visibility 0s 400ms}
+.paid .done{visibility:visible;opacity:1;transform:none;transition:opacity 400ms var(--ease),transform 400ms var(--ease),visibility 0s}
+.tick{width:88px;height:88px;border-radius:50%;background:var(--rust);display:grid;place-items:center;transform:scale(.6)}
+.paid .tick{transform:none}
+.tick svg{width:48px;height:48px;stroke:var(--cream);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:44;stroke-dashoffset:44}
+.paid .tick svg{stroke-dashoffset:0;transition:stroke-dashoffset 520ms var(--ease) 120ms}
+.done .dh{font:900 44px/1 var(--sans);letter-spacing:-.035em}
+.done p{font:500 15px/1.4 var(--sans)}
+.left{display:grid;gap:2px;width:100%;padding:12px 16px;border-radius:16px;background:oklch(0.93 0.02 75)}
+.left small{font:700 12px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.left b{font:900 36px/1 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.done .rid{font:600 14px/1.45 var(--sans);font-variant-numeric:tabular-nums}
+.done .rid b{font-weight:800}
+.again{min-height:56px;padding:0 26px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 17px/1 var(--sans);cursor:pointer;margin-top:auto}
+
+/* legacy ghost screens */
+.leg{position:absolute;inset:0;background:oklch(0.93 0.008 240);padding:66px 22px 22px;display:flex;flex-direction:column;gap:16px;color:oklch(0.25 0.02 250)}
+.leg .bar{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.leg .bar i{height:8px;border-radius:4px;background:oklch(0.8 0.01 250)}
+.leg .bar i.on{background:oklch(0.4 0.09 255)}
+.leg .n{font:900 150px/.8 var(--sans);letter-spacing:-.05em;color:oklch(0.4 0.09 255)}
+.leg .t{font:800 30px/1.05 var(--sans);letter-spacing:-.02em}
+.leg .f{height:56px;border-radius:6px;border:2px solid oklch(0.75 0.01 250);background:oklch(0.99 0.003 240)}
+.leg .lbl{font:600 15px/1 var(--sans);margin-bottom:-8px}
+.leg .nx{margin-top:auto;height:58px;border-radius:6px;background:oklch(0.4 0.09 255);color:oklch(0.98 0.005 240);display:flex;align-items:center;justify-content:center;font:700 19px/1 var(--sans)}
+.leg .drop{font:700 15px/1.3 var(--sans);text-align:center}
+
+/* stats screen */
+.stats{position:absolute;inset:0;background:var(--night);color:var(--amber);padding:78px 26px 26px;display:flex;flex-direction:column;gap:18px;--sc:var(--amber)}
+.stats .lab{font:700 13px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.stats .pct{font:900 116px/.86 var(--sans);letter-spacing:-.05em;white-space:nowrap}
+.dots{display:flex;flex-wrap:wrap;gap:7px;padding-top:22px}
+.dots i{width:26px;height:44px;border-radius:13px 13px 8px 8px;background:currentColor;position:relative}
+.dots i::before{content:"";position:absolute;width:18px;height:18px;border-radius:50%;left:4px;top:-22px;background:currentColor}
+.dots.was i{opacity:.5}
+.apay{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+.apay i{height:40px;border-radius:8px;border:2px solid currentColor}
+.apay i.f{background:currentColor}
+.stats p{font:600 17px/1.35 var(--sans)}
+
+/* request log */
+.log{position:absolute;inset:0;background:var(--night);color:var(--amber);padding:96px 24px 24px;font:500 15px/1.5 var(--sans);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;gap:12px;--sc:var(--amber)}
+.log .lt{font:900 56px/.9 var(--sans);letter-spacing:-.04em}
+.log .l{padding:12px 14px;border-radius:12px;border:1.5px solid currentColor;display:flex;justify-content:space-between;gap:10px}
+.log .l b{font-weight:800}
+.log .l.k{background:var(--amber);color:var(--night)}
+
+/* app shots */
+.shot{position:absolute;inset:0;background:oklch(0.17 0.02 290);--sc:oklch(0.96 0.01 290)}
+.shot img{position:absolute;left:0;top:52px;width:100%;height:calc(100% - 52px);object-fit:cover;object-position:top;display:block}
+.shot.q{background:oklch(0.2 0 0)}
+.scr.shot[data-s^=inc]{background:oklch(0.15 0.03 285)}
+.scr.shot iframe.live{position:absolute;inset:46px 0 0 0;width:100%;height:calc(100% - 46px);border:0;background:var(--paper);opacity:0;transition:opacity .4s var(--ease);pointer-events:none}
+.scr.shot iframe.live.on{opacity:1}
+.notif{position:absolute;z-index:7;left:12px;right:12px;top:58px;padding:14px 16px;border-radius:22px;background:oklch(0.97 0.006 290);color:oklch(0.2 0.02 290);font:500 15px/1.35 var(--sans);display:flex;gap:12px;align-items:center;box-shadow:0 18px 40px -12px oklch(0.1 0.02 290 / .6);transform:translateY(-140%);transition:transform var(--d1) var(--ease)}
+.notif.in{transform:none}
+.notif .ic{flex:none;width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,oklch(0.72 0.14 300),oklch(0.75 0.12 210))}
+.notif b{display:block;font-weight:800}
+
+/* read it your way: a live slice of inclusive.io */
+.rw{--rs:1;position:absolute;inset:0;background:oklch(0.17 0.025 290);color:oklch(0.95 0.012 290);--sc:oklch(0.95 0.012 290);display:flex;flex-direction:column;padding-top:56px}
+.rw .body-s{flex:1;overflow:auto;padding:8px 18px 12px;display:flex;flex-direction:column;gap:calc(12px*var(--rs))}
+.rw .ttl{font:800 calc(26px*var(--rs))/1.1 var(--sans);letter-spacing:-.02em}
+.rw .act{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:18px;background:oklch(0.25 0.04 290);font:500 calc(15px*var(--rs))/1.35 var(--sans)}
+.rw .act .av{flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,oklch(0.72 0.14 300),oklch(0.75 0.12 210))}
+.rw .cand{padding:14px;border-radius:18px;border:1.5px solid oklch(0.45 0.05 290);display:grid;gap:6px;font:500 calc(15px*var(--rs))/1.35 var(--sans)}
+.rw .cand b{font:800 calc(19px*var(--rs))/1.2 var(--sans)}
+.rw .pill{justify-self:start;padding:5px 12px;border-radius:999px;background:oklch(0.82 0.1 300);color:oklch(0.2 0.04 300);font:800 calc(13px*var(--rs))/1.2 var(--sans)}
+.rw .copy{font:500 calc(16px*var(--rs))/1.5 var(--sans)}
+.rw .why{display:none;font:600 calc(13px*var(--rs))/1.4 var(--sans);padding:10px 12px;border-radius:12px;border:1.5px dashed currentColor}
+.rw .panel{flex:none;padding:12px 14px 22px;background:oklch(0.22 0.035 290);border-top:1.5px solid oklch(0.4 0.05 290)}
+.rw .panel p{font:800 13px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.rw .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rw .tg button{min-height:58px;border-radius:14px;border:2px solid oklch(0.6 0.06 290);background:transparent;color:inherit;font:700 15px/1.15 var(--sans);cursor:pointer;padding:4px}
+.rw .tg button[aria-pressed=true]{background:oklch(0.86 0.09 300);color:oklch(0.18 0.03 300);border-color:oklch(0.86 0.09 300)}
+.rw.big{--rs:2}
+.rw.hc{background:oklch(0.13 0 0);color:oklch(0.97 0 0);--sc:oklch(0.97 0 0)}
+.rw.hc .act,.rw.hc .panel{background:oklch(0.13 0 0);border:2px solid oklch(0.97 0 0)}
+.rw.hc .cand{border:2px solid oklch(0.97 0 0)}
+.rw.hc .pill,.rw.hc .tg button[aria-pressed=true]{background:oklch(0.9 0.17 100);color:oklch(0.13 0 0);border-color:oklch(0.9 0.17 100)}
+.rw.hc .tg button{border-color:oklch(0.97 0 0)}
+.rw.gl .why{display:block}
+.rw.gl .copy,.rw.gl .cand span{letter-spacing:.03em;filter:blur(.3px)}
+@media (prefers-reduced-motion:no-preference){
+  .rw.gl .copy,.rw.gl .cand span{animation:glare 5s ease-in-out infinite}
+  .rw.gl .cand span:nth-of-type(2){animation-delay:-1.7s}
+}
+@keyframes glare{0%,100%{letter-spacing:0;filter:blur(0)}35%{letter-spacing:.035em;filter:blur(.35px)}60%{letter-spacing:-.01em;filter:blur(.15px)}}
+
+/* lock screen notifications */
+.pay,.attn{--sc:var(--ink)}
+.lock{position:absolute;inset:0;background-color:var(--rust);background-image:linear-gradient(170deg,oklch(0.42 0.13 33),oklch(0.25 0.07 35) 60%,oklch(0.2 0.03 40));color:var(--peach);padding:70px 14px 18px;display:flex;flex-direction:column;--sc:var(--peach)}
+.lock .clk{font:800 96px/1 var(--sans);letter-spacing:-.04em;text-align:center;font-variant-numeric:tabular-nums}
+.lock .dt{font:600 18px/1 var(--sans);text-align:center;margin-bottom:22px}
+.stack{display:flex;flex-direction:column;gap:9px}
+.nt{background:oklch(0.97 0.012 70);color:oklch(0.22 0.03 40);border-radius:22px;padding:13px 16px;font:500 15px/1.3 var(--sans)}
+.nt small{display:flex;justify-content:space-between;font:700 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.nt strong{font:900 30px/1 var(--sans);letter-spacing:-.03em;margin-right:6px}
+
+/* attention screen */
+.attn{position:absolute;inset:0;background:var(--paper);padding:80px 26px 26px;display:flex;flex-direction:column;gap:14px;color:var(--ink)}
+.attn .lab{font:700 13px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.attn .due{font:900 58px/.92 var(--sans);letter-spacing:-.04em}
+.attn .who{display:flex;justify-content:space-between;padding:14px 16px;border-radius:18px;background:oklch(0.93 0.02 75);font:600 15px/1.3 var(--sans)}
+.attn .go{margin-top:auto;min-height:64px;border-radius:18px;background:var(--rust);color:var(--cream);display:flex;align-items:center;justify-content:center;font:800 21px/1 var(--sans);text-decoration:none}
+.attn .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.attn .two a{min-height:56px;border-radius:16px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;text-decoration:none;font:700 16px/1 var(--sans)}
+.attn .fine{text-align:left}
+.terms{margin:4px 0 0;display:grid;border-top:2px solid var(--ink)}
+.terms div{display:grid;grid-template-columns:76px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid oklch(0.75 0.02 70)}
+.terms dt{font:800 13px/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.terms dd{margin:0;font:600 16px/1.3 var(--sans)}
+
+.name{color:var(--fg)}
+.name .w{display:block;white-space:nowrap;overflow:hidden;padding-bottom:.04em}
+.name .c{display:inline-block;transform:translateY(105%);animation:rise var(--d1) var(--ease) forwards;animation-delay:calc(var(--i)*30ms)}
+@keyframes rise{to{transform:none}}
+
+/* rolling digits: the real number sits in the output as text, the rolling glyphs are decoration */
+.rd{display:inline-flex;vertical-align:top;font-variant-numeric:tabular-nums;letter-spacing:0}
+.rd .s{display:inline-block;height:1em;overflow:hidden;line-height:1}
+.rd .s i{display:block;font-style:normal;transition:transform var(--d-spring) var(--spring)}
+.rd .s i b{display:block;height:1em;font-weight:inherit}
+/* the island says it out loud */
+.island{display:flex;align-items:center;justify-content:center;gap:8px;overflow:hidden;white-space:nowrap;transition:width 420ms var(--spring),margin-left 420ms var(--spring)}
+.island span{font:800 15px/1 var(--sans);color:oklch(0.95 0.02 80);opacity:0;transition:opacity 200ms var(--ease)}
+.island.say{width:272px;margin-left:-136px}
+.island.say span{opacity:1;transition-delay:160ms}
+.tick{transition:transform var(--d-spring) var(--spring)}
+/* the duplicate, stamped */
+.dup{display:none;position:relative;width:100%;padding:12px 14px;border-radius:14px;border:2px dashed oklch(0.6 0.03 60);text-align:left;font:600 14px/1.35 var(--sans)}
+.dup.show{display:block}
+.dup small{display:block;font:800 12px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.dup span:not(.stamp){display:block;padding-right:132px}
+.stamp{position:absolute;right:10px;top:50%;margin-top:-24px;padding:6px 10px;border:3px solid var(--rust);border-radius:8px;color:var(--rust);background:var(--paper);font:900 14px/1.1 var(--sans);letter-spacing:.04em;text-transform:uppercase;transform:rotate(-6deg);text-align:center}
+.done .btns{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.again2{min-height:56px;padding:0 20px;border-radius:999px;border:2px solid var(--rust);background:var(--rust);color:var(--cream);font:700 16px/1 var(--sans);cursor:pointer}
+.done .again{margin-top:0}
+/* the request underneath */
+.xray{position:absolute;inset:0;padding:128px 22px 22px;background:oklch(0.2 0.018 45);color:oklch(0.86 0.1 62);font:500 15px/1.5 var(--sans);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;gap:10px;visibility:hidden;opacity:0;transition:opacity 240ms var(--ease),visibility 0s 240ms}
+.xray .hd{font:800 13px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.xray code{font:inherit;display:block;white-space:pre-wrap;overflow-wrap:normal;word-break:normal}
+.xray .k{font-weight:800}
+.xray .note{margin-top:auto;font:600 14px/1.45 var(--sans);padding:12px 14px;border-radius:12px;border:1.5px solid currentColor}
+.screen.xr .xray{visibility:visible;opacity:1;transition:opacity 240ms var(--ease),visibility 0s}
+.screen.xr .pay{opacity:.07;pointer-events:none}
+.pay{transition:opacity 240ms var(--ease)}
+.xbtn{position:absolute;z-index:9;top:56px;right:16px;min-width:60px;min-height:60px;border-radius:16px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:800 12px/1.1 var(--sans);cursor:pointer;display:none;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:4px}
+.xbtn svg{width:20px;height:20px}
+.screen.at-pay .xbtn{display:flex}
+.xbtn[aria-pressed=true]{background:oklch(0.86 0.1 62);border-color:oklch(0.86 0.1 62)}
+.pay-h{padding-right:70px}
+/* receipt, fed out of the bottom edge */
+.rcpt-wrap{position:absolute;left:46px;right:46px;top:calc(100% - 8px);height:190px;overflow:hidden;pointer-events:none;z-index:-1}
+.rcpt{background:oklch(0.985 0.006 85);color:var(--ink);padding:14px 18px 14px;font:600 15px/1.4 var(--sans);font-variant-numeric:tabular-nums;transform:translateY(-101%);transition:transform 1100ms steps(9,end);box-shadow:0 12px 24px -12px oklch(0.2 0.04 40 / .5);border-bottom:3px dotted oklch(0.7 0.02 70)}
+.rcpt b{display:block;font:900 26px/1.1 var(--sans);letter-spacing:-.02em;margin:4px 0}
+.rcpt small{display:block;font:800 12px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.printed .rcpt{transform:none}
+/* lock-screen stack: one card on top, four tucked under it, dimmed by a shade, never by fading their words */
+.stack{position:relative}
+.nt{position:relative;transition:margin-top 520ms var(--spring),transform 520ms var(--spring)}
+.nt::after{content:"";position:absolute;inset:0;border-radius:inherit;background:oklch(0.22 0.05 35 / .45);opacity:0;transition:opacity 400ms var(--ease);pointer-events:none}
+.stack:not(.fan) .nt+.nt{margin-top:-74px;transform:scale(.94)}
+.stack:not(.fan) .nt+.nt+.nt{transform:scale(.88)}
+.stack:not(.fan) .nt+.nt::after{opacity:1}
+.stack .nt:nth-child(1){z-index:5}.stack .nt:nth-child(2){z-index:4}.stack .nt:nth-child(3){z-index:3}.stack .nt:nth-child(4){z-index:2}.stack .nt:nth-child(5){z-index:1}
+.more{align-self:center;margin-top:12px;min-height:56px;padding:0 22px;border-radius:999px;border:2px solid var(--peach);background:oklch(0.25 0.07 35);color:var(--peach);font:800 15px/1 var(--sans);cursor:pointer}
+.rw .body-s{text-align:left}
+.rw.big .body-s{letter-spacing:.01em}
+
+/* ---------- desktop composition ---------- */
+@media (min-width:860px) and (min-height:560px) and (min-aspect-ratio:5/4){
+  html,body{background:var(--g)}
+  .grain{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--grain);opacity:.45;mix-blend-mode:soft-light}
+  main .scene{--bg:var(--g);--fg:var(--f);height:var(--h,200vh)}
+  .stage{position:sticky;top:0;height:100vh;background:transparent;color:var(--f)}
+  .stage::before{display:none}
+  .frame{position:absolute;z-index:1;width:min(100%,calc(1944*var(--U)));left:calc((100% - min(100%,calc(1944*var(--U))))/2);top:calc((100% - 900*var(--U))/2);height:calc(900*var(--U))}
+  .flow{position:absolute;left:calc(var(--l)/1440*100%);top:calc(var(--t)*var(--U));width:calc(var(--w)/1440*100%);display:flex;flex-direction:column}
+  .flow>*{margin-bottom:calc(var(--mb,18)*var(--U))}
+  .flow>*:last-child{margin-bottom:0}
+  .flow .kick{font-size:max(13px,calc(13*var(--U)));margin-bottom:calc(22*var(--U))}
+  .flow .disp{font-size:calc(var(--fs,46)*var(--U))}
+  .flow .mega{font-size:calc(var(--fs,200)*var(--U))}
+  .flow .body{font-size:max(18px,calc(21*var(--U)))}
+  .flow .quote{font-size:max(20px,calc(24*var(--U)))}
+  .flow .btn{min-height:max(52px,calc(54*var(--U)));font-size:max(15px,calc(16*var(--U)));padding:0 calc(24*var(--U))}
+  .flowing [data-flow]{position:relative;white-space:nowrap}
+  .flow>:not([data-flow]){align-self:flex-start;max-width:100%;transition:transform 200ms var(--ease)}
+  .ln{position:absolute;left:0;top:0;white-space:pre}
+  .phone{position:fixed;left:0;top:0;z-index:30;will-change:transform}
+  .floor{position:fixed;left:0;top:0;z-index:29;width:300px;height:60px;border-radius:50%;background:oklch(0.2 0.05 40 / .5);filter:blur(22px);pointer-events:none}
+  .ghost{position:fixed;left:0;top:0;z-index:28;visibility:hidden;opacity:0;pointer-events:none}
+  .m-slot{display:none}
+  .phone:not(.rc-on) .rcpt-wrap{visibility:hidden}
+  .top,.hire,.desk-switch{zoom:max(1,var(--u))}
+  .foot{background:transparent;--bg:var(--g);--fg:var(--f);color:var(--f);padding:calc(56*var(--U)) calc(56*var(--U)) calc(160*var(--U));max-width:62%;font-size:max(16px,calc(16*var(--U)))}
+  .foot .btn{min-height:max(52px,calc(54*var(--U)));font-size:max(15px,calc(16*var(--U)));padding:0 calc(24*var(--U))}
+  .foot .quiet a{font-size:max(15px,calc(15*var(--U)))}
+  /* a band under the nav, in the ground's own colour, so headings pass under it cleanly */
+  .veil{display:block;position:fixed;z-index:55;left:0;right:0;top:0;height:calc(92px*max(1,var(--u)));pointer-events:none;background:linear-gradient(var(--g) 58%,transparent)}
+  /* hero name: two lines on most screens, one on ultrawide; it spans the viewport, not the frame */
+  .name{position:absolute;inset:0;z-index:0;pointer-events:none;font:900 var(--nf)/.78 var(--sans);letter-spacing:-.036em}
+  .name .w{position:absolute}
+  .name .w1{left:calc(36*var(--U) - var(--fl));top:calc(84*var(--U))}
+  .name .w2{right:calc(36*var(--U) - var(--fl));top:calc(84*var(--U) + var(--nf)*.8)}
+  #pay .flow{top:calc(118*var(--U) + var(--nf)*1.6)}
+  #pay .stage{position:relative}
+}
+@media (min-width:860px) and (min-height:560px) and (min-aspect-ratio:2/1){
+  :root{--nf:calc((100vw - 48px)/7.36)}
+  .name{letter-spacing:-.045em}
+  .name .w1{left:calc(24px - var(--fl))}
+  .name .w2{right:calc(24px - var(--fl));top:calc(84*var(--U))}
+  #pay .flow{top:calc(124*var(--U) + var(--nf)*.8)}
+}
+
+/* ---------- phone layout: the page is the screen ---------- */
+@media not ((min-width:860px) and (min-height:560px) and (min-aspect-ratio:5/4)){
+  :root{--nw:min(100vw - 32px,560px)}
+  body{padding-bottom:84px}
+  .top,.hire{display:none}
+  .stage{padding:28px 16px 40px}
+  .frame{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+  .flow{display:flex;flex-direction:column;gap:16px}
+  .name{font-weight:900;font-family:var(--sans);letter-spacing:-.036em;display:flex;flex-direction:column;margin:8px 0 4px;line-height:.8}
+  .name .w1{font-size:calc(var(--nw)/3.16)}
+  .name .w2{font-size:calc(var(--nw)/4.55)}
+  #pay .flow{display:contents}
+  .o1{order:1}.o2{order:2}.o3{order:3}.o4{order:4}.o5{order:5}.o6{order:6}
+  .disp{font-size:32px}
+  .mega{font-size:min(25vw,150px)}
+  .body{font-size:18px}
+  .quote{font-size:21px}
+  .kick{font-size:12px}
+  .floor,.ghosts{display:none}
+  .phone-wrap{margin:0 -16px}
+  .phone{width:auto;height:auto;padding:0;border-radius:0;background:none;box-shadow:none;transform:none!important}
+  .phone .btn-side,.phone .island,.phone .gloss,.phone .status{display:none}
+  .phone .screen{width:auto;height:auto;border-radius:0;overflow:visible;background:var(--paper)}
+  .phone .scr:not(.pay){display:none}
+  .phone .pay{position:relative;visibility:visible;opacity:1;padding:22px 16px 26px;border-block:2px solid var(--rust);min-height:640px}
+  .phone .done{padding-top:36px}
+  .xbtn{top:14px;right:12px}
+  .xray{padding-top:90px}
+  .rcpt-wrap{position:relative;left:auto;right:auto;top:auto;height:auto;max-height:0;margin:0 16px;transition:max-height 1100ms steps(9,end);z-index:auto}
+  .printed .rcpt-wrap{max-height:260px}
+  .phone .screen{position:relative}
+  .m-slot{margin:0 -16px;position:relative}
+  .m-slot .scr{position:relative;visibility:visible;opacity:1;inset:auto;min-height:540px}
+  .m-slot .shot{min-height:0;height:auto;padding-top:0}
+  .m-slot .shot img{position:static;width:100%;height:auto}
+  /* the first Quoin screenshot ends partway through a caption, so show it down to just above that line */
+  .m-slot .shot[data-s=quoin1] img{aspect-ratio:780/1630;object-fit:cover;object-position:top;height:auto}
+  .m-slot .status{display:none}
+  .m-slot .stats,.m-slot .log,.m-slot .attn,.m-slot .lock{padding-top:30px}
+  .m-slot .rw{padding-top:16px;min-height:640px}
+  .m-slot .notif{position:relative;top:auto;left:auto;right:auto;margin:12px;transform:none}
+  .m-legacy{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 -4px}
+  .m-legacy .cell{position:relative;aspect-ratio:390/844;border-radius:22px;overflow:hidden;border:3px solid var(--brown)}
+  .m-legacy .leg{width:390px;height:844px;transform-origin:0 0;transform:scale(var(--z,.42))}
+  .tabs{display:grid;grid-template-columns:repeat(7,1fr);position:fixed;z-index:60;left:0;right:0;bottom:0;background:var(--cream);color:var(--rust);border-top:2px solid var(--rust);padding:4px 4px calc(4px + env(safe-area-inset-bottom))}
+  .tabs a{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font:700 12px/1 var(--sans);text-decoration:none;border-radius:12px}
+  .tabs a svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2}
+  .tabs a[aria-current=true]{background:var(--rust);color:var(--cream)}
+  .tabs a.hireTab{background:var(--rust);color:var(--cream)}
+  .d-only{display:none}
+}
+/* tall screens and portrait monitors: the stacked build, scaled up, with the screens kept phone-shaped */
+@media (min-width:700px) and (not ((min-width:860px) and (min-height:560px) and (min-aspect-ratio:5/4))){
+  :root{--nw:min(100vw - 96px,1100px)}
+  .stage{padding:min(8vh,150px) 48px}
+  .frame{max-width:1100px;gap:32px}
+  .name{margin-bottom:24px}
+  .disp{font-size:clamp(44px,5.6vw,72px)}
+  .mega{font-size:min(24vw,260px)}
+  .body{font-size:clamp(21px,2.2vw,26px);max-width:34em}
+  .quote{font-size:clamp(24px,2.6vw,30px);max-width:30em}
+  .kick{font-size:15px}
+  .phone-wrap,.m-slot{margin:16px auto;width:min(100%,560px);border-radius:44px;overflow:hidden;box-shadow:0 50px 90px -34px oklch(0.22 0.06 40 / .55)}
+  .phone .pay{border:0}
+  .m-legacy{width:100%;max-width:1100px;margin:16px 0;grid-template-columns:repeat(4,1fr);border-radius:0;overflow:visible;box-shadow:none}
+  .tabs{left:50%;right:auto;transform:translateX(-50%);width:min(100%,680px);bottom:16px;border:2px solid var(--rust);border-radius:20px}
+  .ledger{font-size:18px}
+  .foot{max-width:1100px;margin:0 auto;padding:48px 48px 140px}
+}
+/* the way out: more work, and the quiet pages */
+.foot{position:relative;z-index:1;--bg:var(--cream);--fg:var(--rust);background:var(--cream);color:var(--rust);padding:40px 16px 120px;display:grid;gap:28px}
+.foot .kick{margin-bottom:14px}
+.foot .quiet{display:flex;flex-wrap:wrap;gap:4px 8px;border-top:2px solid currentColor;padding-top:14px}
+.foot .quiet a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font:600 15px/1 var(--sans);text-underline-offset:4px}
+.foot .quiet a:hover{text-decoration-thickness:2px}
+@media (prefers-reduced-motion:reduce){
+  :root{--spring:linear(0,1);--d-spring:1ms}
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;transition-duration:1ms!important;transition-delay:0ms!important}
+}
+/* more contrast asked for: the darkest ink and the lightest ground the palette has, borders at full strength, a heavier focus ring, and no grain laid over the text */
+@media (prefers-contrast:more){
+  :root{--cream:oklch(0.975 0.01 80);--rust:oklch(0.3 0.125 33);--brown:oklch(0.2 0.04 45);--paper:oklch(0.985 0.006 85);--ink:oklch(0.15 0.015 45);--night:oklch(0.16 0.018 45)}
+  .stage::before,.grain{display:none}
+  :focus-visible{outline-width:4px;outline-offset:4px}
+  .ledger,.ledger li{border-color:currentColor;border-bottom-width:2px}
+  .dots.was i{opacity:1}
+}
+.ledger{list-style:none;padding:0;display:grid;gap:0;font:500 15px/1.3 var(--sans);border-top:2px solid currentColor}
+.ledger li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:9px 0;border-bottom:1px solid currentColor}
+.ledger b{font-weight:800}
+.ledger em{font-style:normal}
+.ledger b::after{content:", ";font-weight:400}
+.ledger span{grid-column:1}
+.ledger time{grid-row:1;grid-column:2;font-variant-numeric:tabular-nums;font-weight:600}
+@media (min-width:860px) and (min-height:560px) and (min-aspect-ratio:5/4){ .ledger{font-size:max(14px,calc(15*var(--U)))} .ledger li{padding:calc(8*var(--U)) 0} }
+/* a reader's text spacing (WCAG 1.4.12) adds a quarter to a big word, so under 340px the display type leaves room for it */
+/* at 320 the dates would squeeze the role into a sliver, so each row stacks: company, role, then dates */
+@media (max-width:360px){.ledger li{grid-template-columns:minmax(0,1fr)}.ledger b{display:block}.ledger b::after{content:none}.ledger time{grid-row:auto;grid-column:1}}
+@media (max-width:340px){.name .w1{font-size:calc(var(--nw)/5)!important}.name .w2{font-size:calc(var(--nw)/7)!important}.mega{font-size:min(17vw,150px)!important}.clk{font-size:60px!important}.due{font-size:40px!important}#amtTxt,.big{font-size:44px!important}}
+.btn,.row a{scroll-margin-bottom:104px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the work</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="top d-only">
+  <a class="brand" href="#pay">Craig Hawkes</a>
+  <nav class="navpill" aria-label="Sections">
+    <a href="#pay"><span class="roll"><span>The screen</span><span aria-hidden="true">The screen</span></span></a>
+    <a href="#before"><span class="roll"><span>Before</span><span aria-hidden="true">Before</span></span></a>
+    <a href="#bpo"><span class="roll"><span>The 80%</span><span aria-hidden="true">The 80%</span></span></a>
+    <a href="#inclusive"><span class="roll"><span>inclusive.io</span><span aria-hidden="true">inclusive.io</span></span></a>
+    <a href="#quoin"><span class="roll"><span>Quoin</span><span aria-hidden="true">Quoin</span></span></a>
+    <a href="#web"><span class="roll"><span>Head of Web</span><span aria-hidden="true">Head of Web</span></span></a>
+  </nav>
+</header>
+<a class="hire d-only" href="mailto:craig@craighawkes.dev"><i aria-hidden="true"></i>Hire me</a>
+<a class="desk-switch d-only" data-design-switch="the-desk" href="/" title="Two sides of me, and I can't decide which you'll like better. Tell me." aria-label="The other side of me: My Desk. Two sides of me, and I can't decide which you'll like better. Tell me."><small>The other side of me</small><span>My Desk</span></a>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="scene g-cream" id="pay" style="--h:170vh" aria-labelledby="name">
+ <div class="stage"><div class="frame">
+  <h1 class="name" id="name"><span class="sr">Craig Hawkes</span><span class="w w1" aria-hidden="true"><span class="c" style="--i:0">C</span><span class="c" style="--i:1">R</span><span class="c" style="--i:2">A</span><span class="c" style="--i:3">I</span><span class="c" style="--i:4">G</span></span><span class="w w2" aria-hidden="true"><span class="c" style="--i:5">H</span><span class="c" style="--i:6">A</span><span class="c" style="--i:7">W</span><span class="c" style="--i:8">K</span><span class="c" style="--i:9">E</span><span class="c" style="--i:10">S</span></span></h1>
+  <div class="flow" data-side="left" style="--l:48;--t:470;--w:610">
+    <p class="disp o1" data-flow style="--fs:50">Four screens down to one.</p>
+    <p class="body o5" data-flow>Fifteen years in web, developer first and design in the middle. That phone is the payment screen I built for an FCA&#8209;regulated debt collection estate, and I moved it onto typed Next.js while it was still taking live money.</p>
+  </div>
+  <div class="flow" data-side="right" style="--l:790;--t:470;--w:600">
+    <p class="disp o2" data-flow style="--fs:50">Mobile payments up 80%.</p>
+    <p class="body o3" data-flow>Six people tried it before me. Go on, pay. It's a demo, nothing leaves the page, and it's the same one screen.</p>
+    <div class="row o6"><a class="btn solid" href="mailto:craig@craighawkes.dev">Email me</a><a class="btn" href="#before">How it got built</a></div>
+  </div>
+  <div class="phone-wrap o4">
+  <div class="phone" id="phone">
+   <i class="btn-side b1"></i><i class="btn-side b2"></i><i class="btn-side b3"></i><i class="btn-side b4"></i>
+   <div class="screen">
+    <div class="island" id="island"><span aria-hidden="true"></span></div>
+    <div class="status" aria-hidden="true"><span class="clock">9:41</span><span class="sig"><b style="height:5px"></b><b style="height:8px"></b><b style="height:11px"></b><b style="height:14px"></b><span class="bat"></span></span></div>
+
+    <div class="xray" id="xray" aria-hidden="true">
+      <div class="hd">Underneath: the signed request</div>
+      <code><span class="k">POST</span> /payments
+<span class="k">X-Client-Request-Id:</span> <span class="xid">made fresh for each payment</span>
+<span class="k">X-Signature:</span> HMAC&#8209;SHA256
+<span class="xsig">signed when you pay</span></code>
+      <code class="xbody">{ "amount": 5000, "currency": "GBP", "card": "4242" }</code>
+      <p class="note">Demo values, signed in your browser with a throwaway key. Press pay twice and the second request carries the same ID, so the gateway charges once.</p>
+    </div>
+    <button type="button" class="xbtn" id="xbtn" aria-pressed="false" aria-label="Show the signed request underneath (or hold Alt)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg>Request</button>
+    <form class="scr pay on" id="scr-pay" data-s="pay" aria-label="Demo payment, the one-screen flow" novalidate>
+      <div class="pay-h"><b>Pay your balance</b><span class="tag">Demo</span></div>
+      <div class="acct"><span>Account ending 0000</span><strong id="balTop">£240.00</strong></div>
+      <fieldset class="amts"><legend>How much</legend>
+        <label class="chip"><input type="radio" name="amt" value="20">£20</label>
+        <label class="chip"><input type="radio" name="amt" value="50" checked>£50</label>
+        <label class="chip"><input type="radio" name="amt" value="240">All £240</label>
+      </fieldset>
+      <output class="big" id="amtOut"><span class="sr" id="amtTxt">£50.00</span><span class="rd" aria-hidden="true"></span></output>
+      <button type="button" class="wallet" id="walletBtn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 15h2"/></svg><span>Wallet Pay</span></button>
+      <div class="or" aria-hidden="true">or the card on file</div>
+      <div class="card" role="group" aria-label="Demo card ending 4242, locked">
+        <div class="meta"><span>Demo card</span><span>12/29</span></div>
+        <div class="num" aria-hidden="true">•••• •••• •••• 4242</div>
+        <div class="lk"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><rect x="1" y="7" width="12" height="8" rx="2" fill="currentColor"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Locked. There are no card fields on this page, so nothing can be typed or collected.</span></div>
+      </div>
+      <button type="submit" class="paybtn" id="payBtn">Pay £50.00</button>
+      <p class="fine">Press it twice. Go on.</p>
+      <div class="done" id="done">
+        <div class="tick" aria-hidden="true"><svg viewBox="0 0 56 56"><path d="M14 29l9 9 19-20"/></svg></div>
+        <h2 class="dh" id="doneH" tabindex="-1">Paid.</h2>
+        <div class="left"><small>Left to pay on this one</small><b id="leftAmt">£50.00</b></div>
+        <p id="doneAmt">£50.00 by wallet. Balance now £190.00.</p>
+        <p class="rid" id="doneRid">Client request ID</p>
+        <div class="dup" id="dup"><small>Pay request, again</small><span id="dupId">Same client request ID</span><span class="stamp" id="stamp">Duplicate.<br>Charged once.</span></div>
+        <p>That's the demo. Nothing was charged.</p>
+        <div class="btns"><button type="button" class="again2" id="resendBtn">Send it again</button><button type="button" class="again" id="againBtn">Pay again</button></div>
+      </div>
+      <p class="sr" aria-live="polite" id="payLive"></p>
+    </form>
+
+    <div class="scr stats" data-s="stats" role="img" aria-label="Phone screen: for every ten people who paid on a phone before launch, eighteen do now. Seven in ten of them use Apple Pay.">
+      <div class="lab">Paid on a phone, from launch</div>
+      <div class="pct">+<span class="rd" data-roll="80"></span>%</div>
+      <div><div class="lab">Before 10</div><div class="dots was"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div><div class="lab">Now <span class="rd" data-roll="18" data-from="10"></span></div><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div><div class="lab">Of those, on Apple Pay</div><div class="apay" style="margin-top:10px"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i></div></div>
+      <p>Seven in ten. One thumb.</p>
+    </div>
+
+    <div class="scr log" data-s="log" role="img" aria-label="Phone screen: a signed payment request times out, retries with the same client request ID, and charges once.">
+      <div class="lt">2,046 lines of C#</div>
+      <div class="l"><span>POST /payments</span><b>signed</b></div>
+      <div class="l"><span>HMAC&#8209;SHA256</span><b>ok</b></div>
+      <div class="l"><span>client request ID 7f3a</span><b>sent</b></div>
+      <div class="l"><span>gateway</span><b>timeout</b></div>
+      <div class="l"><span>retry, same ID 7f3a</span><b>sent</b></div>
+      <div class="l k"><span>charged</span><b>once</b></div>
+      <div class="l"><span>failed cutovers</span><b>0</b></div>
+    </div>
+
+    <div class="scr shot" data-s="inc1" role="img" aria-label="inclusive.io design system home on a phone: 117 components, checked with axe in both themes."><img data-src="/one-screen/img/inc-home-p-0" alt="" width="780" height="1688" decoding="async"></div>
+    <div class="scr shot" data-s="inc2" role="img" aria-label="inclusive.io candidates screen on a phone, with a notification: Sarah reviewed Craig Hawkes."><img data-src="/one-screen/img/inc-cand-p-0" alt="" width="780" height="1688" decoding="async">
+      <div class="notif" id="sarah"><span class="ic"></span><span><b>inclusive.io</b>Sarah reviewed Craig Hawkes</span></div></div>
+
+    <div class="scr rw" data-s="rw" role="region" aria-label="inclusive.io on the phone. Read it your way.">
+      <div class="body-s">
+        <div class="ttl">Candidates</div>
+        <div class="act"><span class="av" aria-hidden="true"></span><span>Sarah reviewed Craig Hawkes</span></div>
+        <div class="cand"><b>Craig Hawkes</b><span>Designer and developer, Hamilton</span><span>Design systems, payments, accessibility</span><span class="pill">Interview</span></div>
+        <p class="copy">Axe finds 0 violations on every screen in here, in both themes. Make the text twice the size, turn the contrast all the way up, and it still works.</p>
+        <p class="why">Glare: a rough idea of what bright screens do to some dyslexic readers. The words won't sit still.</p>
+      </div>
+      <div class="panel">
+        <p>Read it your way</p>
+        <div class="tg">
+          <button type="button" data-rw="big" aria-pressed="false">Text 200%</button>
+          <button type="button" data-rw="hc" aria-pressed="false">High contrast</button>
+          <button type="button" data-rw="gl" aria-pressed="false">Glare</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scr shot q" data-s="quoin1" role="img" aria-label="Quoin's specimen page on a phone, 176 of 176 blocks on the 8px grid."><img data-src="/one-screen/img/quoin-p-0" alt="" width="780" height="1688" decoding="async"></div>
+    <div class="scr shot q" data-s="quoin2" role="img" aria-label="Quoin on a phone, further down the specimen."><img data-src="/one-screen/img/quoin-p-1" alt="" width="780" height="1688" decoding="async"></div>
+
+    <div class="scr lock" data-s="notes" role="region" aria-label="Lock screen, Head of Web notifications">
+      <div class="clk clock">9:41</div><div class="dt">Head of Web, 2022 to 2024</div>
+      <div class="stack">
+        <div class="nt" style="--k:0"><small><span>Funnels</span><span>now</span></small><strong>£10m+</strong>through the web funnels and event pages I answered for</div>
+        <div class="nt" style="--k:1"><small><span>Team</span><span>now</span></small><strong>3</strong>hired, and they stayed</div>
+        <div class="nt" style="--k:2"><small><span>Team</span><span>now</span></small><strong>7</strong>co&#8209;managed: five videographers, a junior web designer, a social intern</div>
+        <div class="nt" style="--k:3"><small><span>Email</span><span>now</span></small><strong>+60%</strong>open rates</div>
+        <div class="nt" style="--k:4"><small><span>Outreach</span><span>now</span></small><strong>+27%</strong>cold replies</div>
+      </div>
+      <button type="button" class="more" aria-expanded="false">4 more notifications</button>
+    </div>
+
+    <div class="scr attn" data-s="attn">
+      <div class="lab">One last payment</div>
+      <div class="who"><span>Payee</span><b>Craig Hawkes</b></div>
+      <div class="lab">Amount due</div>
+      <div class="due">Your attention</div>
+      <dl class="terms">
+        <div><dt>For</dt><dd>Lead, principal, head of engineering, first technical leader</dd></div>
+        <div><dt>Terms</dt><dd>Full time or contract</dd></div>
+        <div><dt>Where</dt><dd>Remote or hybrid</dd></div>
+      </dl>
+      <p class="fine"><span class="clock-full">It's 9:41</span> in Hamilton, Scotland. I'll answer today.</p>
+      <a class="go" href="mailto:craig@craighawkes.dev" tabindex="-1">Pay attention</a>
+      <div class="two"><a href="https://www.linkedin.com/in/craighawkesdev" tabindex="-1">LinkedIn</a><a href="https://github.com/hawkbass" tabindex="-1">GitHub</a></div>
+      <p class="fine">craig@craighawkes.dev</p>
+    </div>
+   </div>
+   <div class="gloss" aria-hidden="true"></div>
+   <div class="rcpt-wrap" aria-hidden="true"><div class="rcpt"><small>Receipt · demo</small><b id="rAmt">£50.00</b><span id="rId">Client request ID</span><br><span>Signed HMAC&#8209;SHA256, charged once</span></div></div>
+  </div>
+  </div>
+ </div></div>
+</section>
+
+<div class="floor" id="floor" aria-hidden="true"></div>
+<div class="ghosts" id="ghosts"></div>
+
+<!-- ================= BEFORE ================= -->
+<section class="scene g-sand" id="before" style="--h:320vh" aria-labelledby="h-before">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="left" style="--l:56;--t:110;--w:690">
+    <p class="kick">Before · BPO Collections, 2025</p>
+    <h2 class="disp" id="h-before" data-flow style="--fs:54">It used to take four screens to&nbsp;pay&nbsp;a&nbsp;debt.</h2>
+    <p class="body" data-flow>Find your account. Pick an amount. Type your card in. Check it, confirm it, then a 3D Secure redirect on top. Every one of those screens is a place where somebody already in arrears puts the phone down and decides it can wait.</p>
+    <p class="body" data-flow>Under it sat 299 VB files, 101 Web Forms pages, 131 SQL scripts and more than 97 stored procedures on a PCI&#8209;DSS SQL Server. About six developers had tried moving it from SagePay to Fiserv. None of those attempts ever reached testing.</p>
+    <p class="quote" data-flow>Six people had tried it. They asked me. I said yes.</p>
+  </div>
+  <div class="m-slot m-legacy" aria-hidden="true"></div>
+ </div></div>
+</section>
+
+<!-- ================= 80% ================= -->
+<section class="scene g-rust" id="bpo" style="--h:200vh" aria-labelledby="h-bpo">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="right" style="--l:420;--t:120;--w:960">
+    <p class="kick">After · from launch</p>
+    <h2 class="mega" id="h-bpo" data-flow style="--fs:230"><span class="sr">Mobile payments up </span>+80%</h2>
+    <p class="disp" data-flow style="--fs:40">Mobile payments, from the day it launched.</p>
+    <p class="body" data-flow>For every ten people who used to pay on their phone, eighteen do now, and seven in ten of them pay with Apple Pay, because the button is right there on the one screen and it takes a thumb. 3D Secure, Google Pay, Open Banking, Direct Debit and bank validation all live in that same flow.</p>
+    <p class="quote" data-flow>When my work is great, I'll tell you that it's fucking great, because I'm good at my job.</p>
+  </div>
+  <div class="m-slot" data-clone="stats"></div>
+ </div></div>
+</section>
+
+<!-- ================= BUILD ================= -->
+<section class="scene g-night" id="build" style="--h:190vh" aria-labelledby="h-build">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="left" style="--l:56;--t:140;--w:930">
+    <p class="kick">Under the button</p>
+    <h2 class="disp" id="h-build" data-flow style="--fs:60">I did it solo. 2,046 lines&nbsp;of&nbsp;C#, and&nbsp;not&nbsp;one failed&nbsp;cutover.</h2>
+    <p class="body" data-flow>A library with 8 gateway operations and 20 request and response types, with every request signed using HMAC&#8209;SHA256. The retries are idempotent: the client request ID means a timeout can't charge somebody twice. That's what you felt when you pressed pay twice up top.</p>
+    <p class="body" data-flow>Zero failed cutovers matters more to me than the 80, because of who is on the other end of it:</p>
+    <blockquote class="quote" data-flow>when it breaks, somebody already in arrears can't pay, and they'll assume that's on them.</blockquote>
+    <div class="row"><a class="btn solid" href="/work/bpo-payments">Read the full case study</a></div>
+  </div>
+  <div class="m-slot" data-clone="log"></div>
+ </div></div>
+</section>
+
+<!-- ================= INCLUSIVE ================= -->
+<section class="scene g-plum" id="inclusive" style="--h:320vh" aria-labelledby="h-inc">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="right" style="--l:420;--t:120;--w:960">
+    <p class="kick">inclusive.io · co&#8209;founder, Feb 2024 to now</p>
+    <h2 class="disp" id="h-inc" data-flow style="--fs:64">117 components. Built solo. Built&nbsp;twice.</h2>
+    <p class="body" data-flow>inclusive.io is my own company, a design system and the applicant tracking software built on top of it. I built all 117 components on my own, then rebuilt the lot for V2, because I couldn't leave it alone. 26 ATS workflows and 174 routes verified, axe finds 0 violations in both themes and the rest is for a person to check, on a three&#8209;tier OKLCH token system from 280px to 5K with 360 contrast pairings checked on every run. That checking found nine real defects nothing else had caught.</p>
+    <p class="body" data-flow>The phone's running a slice of it. Put the text to 200%, turn the contrast all the way up, or switch on glare, the moving text some dyslexic readers live with, and it still works.</p>
+    <p class="quote" data-flow>I'm not ONLY Design Systems and Accessibility. Those may be my specialisation, but I'm a phenomenal developer outwith just those.</p>
+    <div class="row"><a class="btn solid" href="/work/inclusive-io">Read the case study</a></div>
+  </div>
+  <div class="m-slot" data-clone="rw"></div>
+ </div></div>
+</section>
+
+<!-- ================= QUOIN ================= -->
+<section class="scene g-yolk" id="quoin" style="--h:210vh" aria-labelledby="h-quoin">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="left" style="--l:56;--t:130;--w:930">
+    <p class="kick">Quoin · open source</p>
+    <h2 class="disp" id="h-quoin" data-flow style="--fs:58">Print's had baseline grids since metal&nbsp;type. The&nbsp;web still hasn't&nbsp;got&nbsp;one.</h2>
+    <p class="body" data-flow>Quoin puts a web page on a baseline grid, and it measures how far a page drifts off one. I pointed it at my old site next to eight design systems, and it came last of the nine, at ninety distinct drift values, three times worse than the next worst. I published that. Then I got it from ninety down to fourteen, 9th to 4th. Then I swapped that design for this one and My Desk, measured again the same way, and they came out at 45 and 60, behind all eight. That wasn't acceptable, so both now seat themselves on the grid with Quoin when they load. This page drifts 6 ways at desktop widths, My Desk on a phone 4, and the design systems are measured as they ship.</p>
+    <p class="quote" data-flow>fuck ups do happen, we all make mistakes, and trying to pretend we never do is just lying through our teeth.</p>
+    <div class="row"><a class="btn solid" href="https://quoin.craighawkes.dev">Open Quoin</a><a class="btn" href="/quoin">The case study</a><a class="btn" href="https://github.com/hawkbass/quoin">The files on GitHub</a></div>
+  </div>
+  <div class="m-slot" data-clone="quoin1"></div>
+ </div></div>
+</section>
+
+<!-- ================= HEAD OF WEB ================= -->
+<section class="scene g-rust" id="web" style="--h:230vh" aria-labelledby="h-web">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="right" style="--l:420;--t:130;--w:960">
+    <p class="kick">Paul McFadden Wealth · Head of Web, Dec 2022 to Jan 2024</p>
+    <h2 class="mega" id="h-web" data-flow style="--fs:200">£10m+</h2>
+    <p class="disp" data-flow style="--fs:40">of revenue through funnels I was personally accountable for.</p>
+    <p class="body" data-flow>I ran the web department for a property education group and its partner businesses. I hired 3 of the team and co&#8209;managed 7, five videographers, a junior web designer and a social media intern, and built one atomic design system across web, email and courses. Open rates went up 60% and cold outreach replies up 27%.</p>
+  </div>
+  <div class="m-slot" data-clone="notes"></div>
+ </div></div>
+</section>
+
+<!-- ================= HIRE ================= -->
+<section class="scene g-cream" id="hire" style="--h:150vh" aria-labelledby="h-hire">
+ <div class="stage"><div class="frame">
+  <div class="flow" data-side="left" style="--l:56;--t:100;--w:900">
+    <p class="kick">Hire · open now</p>
+    <h2 class="disp" id="h-hire" data-flow style="--fs:62">Grab me before somebody&nbsp;else&nbsp;does.</h2>
+    <p class="body" data-flow>Open to lead, principal and head of engineering roles, or first technical leader. Full time or contract, remote or hybrid, from Hamilton. Fifteen years in web and 50+ clients through my own studio since 2017, and every number on this page is real.</p>
+    <p class="body" data-flow>My Designs and My Desk are two sides of me, and I can't decide which you'll like better, so tell me: <a href="mailto:craig@craighawkes.dev?subject=My%20Desk%20or%20My%20Designs">email me which</a>.</p>
+    <p class="quote" data-flow>Looking great doesn't always mean working great, but working great almost always includes looking great.</p>
+    <ul class="ledger" aria-label="Work history">
+      <li><span><b>BPO Collections</b><em>Full Stack Developer, contract</em></span><time>Sept 2025 to Apr 2026</time></li>
+      <li><span><b>inclusive.io</b><em>Co&#8209;founder, Design Systems Engineer</em></span><time>Feb 2024 to now</time></li>
+      <li><span><b>Paul McFadden Wealth</b><em>Head of Web</em></span><time>Dec 2022 to Jan 2024</time></li>
+      <li><span><b>TMD Media</b><em>Senior Web Designer</em></span><time>2022</time></li>
+      <li><span><b>DesignBuddy UK</b><em>my own studio, 50+ clients</em></span><time>Oct 2017 to now</time></li>
+      <li><span><b>NOVAVAPES</b><em>Graphic Designer, one brand for six years</em></span><time>2016 to 2022</time></li>
+    </ul>
+    <div class="row"><a class="btn solid" href="mailto:craig@craighawkes.dev">craig@craighawkes.dev</a><a class="btn" href="https://www.linkedin.com/in/craighawkesdev">LinkedIn</a><a class="btn" href="https://github.com/hawkbass">GitHub</a></div>
+  </div>
+  <div class="m-slot" data-clone="attn"></div>
+ </div></div>
+</section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="More of the work">
+    <p class="kick">More of the work</p>
+    <div class="row"><a class="btn solid" href="/work">All work</a><a class="btn" href="/writing">Writing</a></div>
+  </nav>
+  <nav class="quiet" aria-label="About this site">
+    <a href="/accessibility">Accessibility</a><a href="/privacy">Privacy</a><a href="/build">How it's built</a><a href="/design-system">Design system</a><a href="/previously">Earlier designs</a>
+  </nav>
+</footer>
+
+<nav class="tabs" aria-label="Sections">
+  <a href="#pay"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/></svg>Pay</a>
+  <a href="#bpo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18L10 11l4 4 6-8"/></svg>80%</a>
+  <a href="#inclusive"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg>inc.io</a>
+  <a href="#quoin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Quoin</a>
+  <a href="#web"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Web</a>
+  <a data-design-switch="the-desk" href="/" aria-label="The other side of me: My Desk. Two sides of me, and I can't decide which you'll like better. Tell me."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18M5 9v11M19 9v11M8 9V5h8v4"/></svg>Desk</a>
+  <a href="mailto:craig@craighawkes.dev" class="hireTab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Hire</a>
+</nav>
+
+<script type="module">
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const DQ = '(min-width:860px) and (min-height:560px) and (min-aspect-ratio:5/4)';
+const DESK = matchMedia(DQ);
+const RM = matchMedia('(prefers-reduced-motion: reduce)');
+const root = document.documentElement;
+const bez = (() => { const x1 = .22, y1 = 1, x2 = .36, y2 = 1; const B = (t, a, b) => 3 * a * t * (1 - t) ** 2 + 3 * b * t * t * (1 - t) + t ** 3; return x => { let lo = 0, hi = 1; for (let i = 0; i < 22; i++) { const m = (lo + hi) / 2; B(m, x1, x2) < x ? lo = m : hi = m; } return B((lo + hi) / 2, y1, y2); }; })();
+
+/* ---------- clock: Hamilton's real time ---------- */
+const fmt = new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: '2-digit', timeZone: 'Europe/London' });
+function tick() { const t = fmt.format(new Date()); $$('.clock').forEach(e => e.textContent = t); $$('.clock-full').forEach(e => e.textContent = `It's ${t}`); }
+tick(); setInterval(tick, 20000);
+
+/* ---------- rolling digits ---------- */
+const digs = v => [...v].filter(c => /\d/.test(c)).map(Number), shape = v => v.replace(/\d/g, '#');
+function roll(el, str, from) {
+  if (el._shape !== shape(str)) {
+    el._shape = shape(str);
+    el.innerHTML = [...str].map(ch => /\d/.test(ch) ? '<span class="s"><i>' + [...'0123456789'].map(d => `<b>${d}</b>`).join('') + '</i></span>' : `<span>${ch}</span>`).join('');
+    const st = from != null && shape(from) === shape(str) ? digs(from) : digs(str).map(() => 0);
+    const cols = el.querySelectorAll('.s i');
+    cols.forEach((c, k) => { c.style.transition = 'none'; c.style.transform = `translateY(${-st[k]}em)`; });
+    void el.offsetWidth; cols.forEach(c => c.style.transition = '');
+  }
+  const t = digs(str);
+  el.querySelectorAll('.s i').forEach((c, k) => c.style.transform = `translateY(${-t[k]}em)`);
+}
+const rerollStats = rootEl => $$('.rd[data-roll]', rootEl).forEach(el => { el._shape = ''; const to = el.dataset.roll; roll(el, to, el.dataset.from || to.replace(/\d/g, '0')); });
+
+/* ---------- the payment demo ---------- */
+const form = $('#scr-pay'), payBtn = $('#payBtn'), walletBtn = $('#walletBtn'), live = $('#payLive'), rd = $('#amtOut .rd');
+const pscreen = $('#phone .screen'), island = $('#island'), xbtn = $('#xbtn'), dup = $('#dup'), stamp = $('#stamp');
+const BAL = 240; let amt = 50, busy = false, presses = 0, reqId = '', how = '', islandT = 0;
+const money = n => '£' + n.toFixed(2);
+roll(rd, money(amt), money(amt));
+form.addEventListener('change', e => { if (e.target.name === 'amt') { amt = +e.target.value; $('#amtTxt').textContent = money(amt); roll(rd, money(amt)); payBtn.textContent = `Pay ${money(amt)}`; signNow(); } });
+const flash = b => { b.classList.add('press'); setTimeout(() => b.classList.remove('press'), 140); };
+const newId = () => { const h = [...crypto.getRandomValues(new Uint8Array(4))].map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase(); return `REQ-${h.slice(0, 4)}-${h.slice(4)}`; };
+/* a real HMAC-SHA256 over the demo request, with a throwaway key, so the x-ray shows the actual thing */
+const enc = t => new TextEncoder().encode(t);
+let keyP = null;
+async function signNow() {
+  const body = `{ "amount": ${amt * 100}, "currency": "GBP", "card": "4242" }`;
+  $('.xbody').textContent = body;
+  $('.xid').textContent = reqId || 'made fresh for each payment';
+  if (!reqId) { $('.xsig').textContent = 'signed when you pay'; return; }
+  try {
+    keyP = keyP || crypto.subtle.importKey('raw', enc('throwaway-demo-key'), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+    const sig = new Uint8Array(await crypto.subtle.sign('HMAC', await keyP, enc(reqId + '\n' + body)));
+    const hex = [...sig].map(b => b.toString(16).padStart(2, '0')).join('');
+    $('.xsig').textContent = hex.match(/.{8}/g).join(' '); // in groups, so it wraps between them and never mid-group
+  } catch (e) { $('.xsig').textContent = 'signed on the server in the real thing'; }
+}
+signNow();
+function pay(kind, btn) {
+  presses++; flash(btn);
+  if (busy) { live.textContent = 'Already paying. Same request ID, so it only charges once.'; return; }
+  busy = true; how = kind; reqId = newId(); signNow();
+  form.classList.add('busy'); btn.classList.add('working'); btn.setAttribute('aria-busy', 'true');
+  setTimeout(() => settle(btn), RM.matches ? 0 : 480);
+}
+function settle(btn) {
+  btn.classList.remove('working'); btn.removeAttribute('aria-busy'); form.classList.remove('busy');
+  const after = BAL - amt;
+  $('#doneAmt').textContent = `${money(amt)} by ${how === 'wallet' ? 'wallet' : 'the demo card ending 4242'}. ${after ? 'Balance now ' + money(after) + '.' : 'Balance cleared.'}`;
+  $('#doneRid').textContent = `Client request ID ${reqId}`;
+  $('#rAmt').textContent = money(amt); $('#rId').textContent = reqId;
+  form.classList.add("paid"); phone.classList.add("printed"); req();
+  const el = $('#leftAmt'), t0 = performance.now(), dur = RM.matches ? 0 : 700;
+  const step = now => { const k = dur ? Math.min(1, (now - t0) / dur) : 1; el.textContent = money(amt * (1 - bez(k))); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+  island.firstElementChild.textContent = `Paid ${money(amt)} ✓`; island.classList.add('say');
+  clearTimeout(islandT); islandT = setTimeout(() => island.classList.remove('say'), 2400);
+  live.textContent = `Paid ${money(amt)}. Demo only, nothing was charged.`;
+  $('#doneH').focus({ preventScroll: true });
+  if (presses > 1) showDup(); else dup.classList.remove('show');
+}
+function showDup() {
+  dup.classList.add('show');
+  $("#dupId").textContent = `${reqId}, same ID`;
+  const fast = RM.matches;
+  dup.animate([{ transform: 'translateX(48px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: fast ? 1 : 420, easing: 'cubic-bezier(.22,1,.36,1)' });
+  stamp.animate([{ transform: 'scale(1.15) rotate(-8deg)', opacity: 0 }, { transform: 'scale(.98) rotate(-6deg)', opacity: 1, offset: .7 }, { transform: 'scale(1) rotate(-6deg)', opacity: 1 }], { duration: fast ? 1 : 320, delay: fast ? 0 : 320, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+  setTimeout(() => { live.textContent = `Duplicate request ${reqId}. Charged once.`; }, fast ? 0 : 650);
+}
+form.addEventListener('submit', e => { e.preventDefault(); pay('card', payBtn); });
+walletBtn.addEventListener('click', () => pay('wallet', walletBtn));
+$('#resendBtn').addEventListener('click', () => { presses++; showDup(); });
+$('#againBtn').addEventListener('click', () => {
+  form.classList.remove("paid"); phone.classList.remove("printed"); req(); dup.classList.remove('show'); island.classList.remove('say');
+  busy = false; presses = 0; reqId = ''; signNow(); live.textContent = ''; $('#leftAmt').textContent = money(amt);
+  form.querySelector('input:checked').focus({ preventScroll: true });
+});
+const doneObs = () => { $('#done').inert = !form.classList.contains('paid'); };
+new MutationObserver(doneObs).observe(form, { attributes: true, attributeFilter: ['class'] }); doneObs();
+
+/* ---------- the request underneath: a toggle, or hold Alt ---------- */
+let xrHeld = false;
+const setXr = on => { pscreen.classList.toggle('xr', on); xbtn.setAttribute('aria-pressed', String(on)); form.inert = on; $('#xray').setAttribute('aria-hidden', String(!on)); };
+xbtn.addEventListener('click', () => setXr(!pscreen.classList.contains('xr')));
+addEventListener('keydown', e => { if (e.key === 'Alt' && pscreen.classList.contains('at-pay') && !xrHeld) { xrHeld = true; e.preventDefault(); setXr(true); } });
+addEventListener('keyup', e => { if (e.key === 'Alt' && xrHeld) { xrHeld = false; setXr(false); } });
+
+/* ---------- the lock-screen stack ---------- */
+const setFan = (st, on) => { st.classList.toggle('fan', on); const b = st.parentElement.querySelector('.more'); if (b) { b.setAttribute('aria-expanded', String(on)); b.textContent = on ? 'Stack them' : '4 more notifications'; } };
+document.addEventListener('click', e => { const b = e.target.closest('.more'); if (b) setFan(b.parentElement.querySelector('.stack'), !b.parentElement.querySelector('.stack').classList.contains('fan')); });
+
+/* ---------- read it your way ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-rw]'); if (!b) return;
+  const s = b.closest('.rw'), k = b.dataset.rw, on = !s.classList.contains(k);
+  s.classList.toggle(k, on); b.setAttribute('aria-pressed', String(on));
+});
+
+/* ---------- images: only when their scene is near ---------- */
+const imgSet = (img, sizes) => { if (img.src) return; const b = img.dataset.src; img.sizes = sizes; img.srcset = `${b}-390.webp 390w, ${b}-780.webp 780w`; img.src = `${b}-390.webp`; };
+
+/* ---------- legacy screens ---------- */
+const LEG = [
+  ['Find your account', ['Account reference', 'Postcode'], 'Continue'],
+  ['Choose an amount', ['Amount', 'Payment date'], 'Continue'],
+  ['Card details', ['Card number', 'Expiry and CVV', 'Name on card'], 'Continue'],
+  ['Check and confirm', ['Billing address'], 'Confirm, then 3D Secure'],
+];
+const legHTML = k => { const [t, fields, nx] = LEG[k]; return `<div class="leg"><div class="bar">${[0, 1, 2, 3].map(j => `<i class="${j <= k ? 'on' : ''}"></i>`).join('')}</div><div class="n">${k + 1}</div><div class="t">${t}</div>${fields.map(f => `<div class="lbl">${f}</div><div class="f"></div>`).join('')}<div class="nx">${nx}</div><div class="drop">Step ${k + 1} of 4</div></div>`; };
+$('#ghosts').innerHTML = LEG.map((l, k) => `<div class="phone ghost" role="img" aria-label="Old flow, screen ${k + 1} of 4: ${l[0]}"><i class="btn-side b1"></i><i class="btn-side b2"></i><i class="btn-side b4"></i><div class="screen"><div class="island"></div>${legHTML(k)}</div></div>`).join('');
+const ghosts = $$('.ghost');
+$('.m-legacy').innerHTML = LEG.map((l, k) => `<div class="cell">${legHTML(k)}</div>`).join('');
+const sizeLegacy = () => $$('.m-legacy .cell').forEach(c => c.style.setProperty('--z', c.clientWidth / 390));
+/* stacked layouts get their own copy of each screen, in reading order */
+$$('.m-slot[data-clone]').forEach(slot => {
+  const c = $(`.phone .scr[data-s="${slot.dataset.clone}"]`).cloneNode(true);
+  c.classList.add('on'); $$('[id]', c).forEach(n => n.removeAttribute('id'));
+  $$('a[tabindex]', c).forEach(a => a.removeAttribute('tabindex'));
+  $$('img', c).forEach(i => { i.loading = 'lazy'; imgSet(i, '(min-width:700px) 560px, 100vw'); });
+  $$('.stack', c).forEach(st => setFan(st, true));
+  slot.append(c);
+  if ($('.rd[data-roll]', c)) new IntersectionObserver((es, io) => es.forEach(e => { if (e.isIntersecting) { rerollStats(c); io.disconnect(); } }), { threshold: .4 }).observe(c);
+});
+$$('.phone .rd[data-roll]').forEach(el => roll(el, el.dataset.roll, el.dataset.roll));
+
+/* inclusive.io on the phone is the real app, not a picture: the same two screens, rendered by the app itself in a frame the size of the phone.
+   The picture stays underneath until the app has drawn, and stays if it never does. The frame takes no pointer events, so a swipe over the
+   phone still scrolls this page rather than the frame. It loads when the scene reaches it. */
+const LIVE = { inc1: '/inclusive-app/design-system/', inc2: '/inclusive-app/candidates/' };
+let liveMade = false;
+function liveScreens() {
+  if (liveMade) return; liveMade = true;
+  $$('.scr[data-s="inc1"], .scr[data-s="inc2"]').forEach(sc => {
+    const f = document.createElement('iframe'), img = $('img', sc);
+    f.className = 'live'; f.src = LIVE[sc.dataset.s]; f.tabIndex = -1; f.title = sc.getAttribute('aria-label') || 'inclusive.io';
+    f.addEventListener('load', () => { f.classList.add('on'); sc.removeAttribute('role'); sc.removeAttribute('aria-label'); if (img) img.setAttribute('aria-hidden', 'true'); });
+    (img || sc).after(f);
+  });
+}
+
+
+/* ---------- grounds that travel ---------- */
+const GR = { pay: [[.955, .022, 80], [.37, .125, 33], 0], before: [[.885, .06, 72], [.27, .045, 45], 0], bpo: [[.37, .125, 33], [.93, .045, 65], 1], build: [[.205, .02, 45], [.8, .13, 62], 1], inclusive: [[.25, .065, 330], [.87, .07, 330], 1], quoin: [[.885, .15, 95], [.24, .03, 80], 0], web: [[.37, .125, 33], [.93, .045, 65], 1], hire: [[.955, .022, 80], [.37, .125, 33], 0] };
+const lhue = (a, b, t) => { const d = ((b - a + 540) % 360) - 180; return (a + d * t + 360) % 360; };
+const mixc = (A, B, t) => [A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t, lhue(A[2], B[2], t)];
+const ok = c => `oklch(${c[0].toFixed(4)} ${c[1].toFixed(4)} ${c[2].toFixed(2)})`;
+/* light to light and dark to dark blend all the way (checked at AAA every 1%); light to dark carries hue and
+   chroma all the way but holds its lightness until the midpoint, where lightness and ink swap together */
+function ground(a, b, t) {
+  const [ga, fa, da] = GR[a], [gb, fb, db] = GR[b];
+  if (da === db) return { g: mixc(ga, gb, t), f: mixc(fa, fb, t), o: 1 };
+  const g = mixc(ga, gb, t); g[0] = t < .5 ? ga[0] : gb[0];
+  return { g, f: t < .5 ? fa : fb, o: 1, dark: t < .5 ? da : db };
+}
+let lastG = '';
+function paint(a, b, t) {
+  const r = ground(a, b, t), gs = ok(r.g), fs = ok(r.f), key = gs + fs + r.o.toFixed(2);
+  if (key === lastG) return; lastG = key;
+  root.style.setProperty('--g', gs); root.style.setProperty('--f', fs); root.style.setProperty('--to', r.o.toFixed(3));
+}
+
+/* ---------- choreography ---------- */
+const P = {
+  pay:   { kf: [[0, { x: .5, y: .477, h: .74, r: -3 }], [1, { x: .5, y: .477, h: .74, r: -6 }]], scr: () => 'pay' },
+  before:{ kf: [[0, { x: .72, y: .53, h: .74, r: 5, s: 0 }], [.1, { x: .72, y: .53, h: .74, r: 5, s: 0 }], [.38, { x: .72, y: .53, h: .74, r: 5, s: 1 }], [.66, { x: .72, y: .53, h: .74, r: 5, s: 1 }], [.92, { x: .72, y: .53, h: .74, r: 3, s: 0 }], [1, { x: .72, y: .53, h: .74, r: 3, s: 0 }]], scr: () => 'pay' },
+  bpo:   { kf: [[0, { x: .25, y: .53, h: .8, r: -5 }], [1, { x: .25, y: .52, h: .8, r: -11 }]], scr: () => 'stats' },
+  build: { kf: [[0, { x: .76, y: .53, h: .8, r: 5 }], [1, { x: .76, y: .53, h: .8, r: 11 }]], scr: () => 'log' },
+  inclusive: { kf: [[0, { x: .25, y: .53, h: .82, r: -4 }], [.5, { x: .25, y: .53, h: .82, r: -7 }], [.62, { x: .25, y: .53, h: .84, r: -2 }], [1, { x: .25, y: .53, h: .84, r: -2 }]], scr: p => p < .25 ? 'inc1' : p < .5 ? 'inc2' : 'rw', fx: p => $('#sarah').classList.toggle('in', p > .3 && p < .5) },
+  quoin: { kf: [[0, { x: .76, y: .53, h: .8, r: 7 }], [1, { x: .76, y: .53, h: .8, r: 2 }]], scr: p => p < .55 ? 'quoin1' : 'quoin2' },
+  web:   { kf: [[0, { x: .25, y: .53, h: .8, r: -7 }], [1, { x: .25, y: .53, h: .8, r: -2 }]], scr: () => 'notes' },
+  hire:  { kf: [[0, { x: .76, y: .53, h: .8, r: 5 }], [1, { x: .76, y: .53, h: .8, r: 0 }]], scr: () => 'attn' },
+};
+const GT = [{ x: .5, y: .45, r: -7 }, { x: .63, y: .58, r: -3 }, { x: .76, y: .45, r: 2 }, { x: .89, y: .58, r: 6 }];
+const scenes = $$('main > .scene').map((el, n) => ({ el, n, id: el.id, def: P[el.id] }));
+const lerp = (a, b, t) => a + (b - a) * t;
+const ss = t => t * t * (3 - 2 * t);
+const mix = (A, B, t) => ({ x: lerp(A.x, B.x, t), y: lerp(A.y, B.y, t), h: lerp(A.h, B.h, t), r: lerp(A.r, B.r, t), s: lerp(A.s || 0, B.s || 0, t) });
+function at(def, p) {
+  const k = def.kf; if (p <= k[0][0]) return { ...k[0][1] };
+  for (let i = 1; i < k.length; i++) if (p <= k[i][0]) return mix(k[i - 1][1], k[i][1], ss((p - k[i - 1][0]) / (k[i][0] - k[i - 1][0])));
+  return { ...k[k.length - 1][1] };
+}
+let U = 1, FW = 1440, FL = 0, FT = 0, VW = 0, VH = 0, Y0 = .86;
+function measure() {
+  VW = root.clientWidth; VH = innerHeight;
+  U = Math.min(VW / 1440, VH / 900);
+  FW = Math.min(VW, 1440 * U * 1.35); FL = (VW - FW) / 2; FT = (VH - 900 * U) / 2;
+  root.style.setProperty('--u', U); // the CSS works out the same frame on its own, so nothing moves when this lands
+  for (const s of scenes) { s.top = s.el.offsetTop; s.H = s.el.offsetHeight; }
+  if (DESK.matches) { // the phone starts just under the hero copy line, wherever the name leaves it
+    const f = $('#pay .flow'), top = f.getBoundingClientRect().top - scenes[0].el.querySelector('.stage').getBoundingClientRect().top;
+    Y0 = (top - 14 * U + .74 * 900 * U / 2 - FT) / (900 * U);
+  }
+}
+function poseNow() {
+  const y = scrollY;
+  let i = scenes.length - 1;
+  for (let k = 0; k < scenes.length; k++) { if (y < scenes[k].top + scenes[k].H - VH) { i = k; break; } }
+  const S = scenes[i];
+  const p = Math.min(1, Math.max(0, (y - S.top) / Math.max(1, S.H - VH)));
+  if (y >= S.top || i === 0) {
+    if (RM.matches) return { pose: at(S.def, 1), scene: S, p: S.id === 'before' ? .5 : p, ga: S.id, gb: S.id, gt: 0 };
+    return { pose: at(S.def, p), scene: S, p, ga: S.id, gb: S.id, gt: 0 };
+  }
+  const prev = scenes[i - 1]; const t = Math.min(1, Math.max(0, (y - (S.top - VH)) / VH));
+  if (RM.matches) { const sc = t < .5 ? prev : S; return { pose: at(sc.def, 1), scene: sc, p: sc.id === 'before' ? .5 : (t < .5 ? 1 : 0), ga: prev.id, gb: S.id, gt: t }; }
+  const pose = mix(at(prev.def, 1), at(S.def, 0), ss(t));
+  return t < .5 ? { pose, scene: prev, p: 1, ga: prev.id, gb: S.id, gt: t } : { pose, scene: S, p: 0, ga: prev.id, gb: S.id, gt: t };
+}
+const PW = 414, PH = 868;
+function place(el, pose, lift = 0) {
+  const H = pose.h * 900 * U, sc = H / PH;
+  const cx = FL + pose.x * FW, cy = FT + pose.y * 900 * U;
+  el.style.transform = `translate(${(cx - PW / 2).toFixed(1)}px,${(cy - PH / 2).toFixed(1)}px) rotate(${pose.r.toFixed(2)}deg) scale(${sc.toFixed(4)})`;
+  const a = -pose.r * Math.PI / 180, m = 1 + lift * 1.6; // shadow falls down-right in world space; longer and softer while it's in the air
+  el.style.setProperty('--shx', ((Math.sin(-a) * 40 + Math.cos(a) * 18) * m).toFixed(1) + 'px');
+  el.style.setProperty('--shy', ((Math.cos(a) * 40 + Math.sin(a) * 18) * m).toFixed(1) + 'px');
+  el.style.setProperty('--sb', (1 + lift).toFixed(2)); el.style.setProperty('--so', (1 - lift * .5).toFixed(2));
+  return { cx, cy, w: PW * sc, h: H, r: pose.r };
+}
+function poly(o, pad) {
+  const a = o.w / 2 + pad, b = o.h / 2 + pad, c = o.w * 0.12, rad = o.r * Math.PI / 180, cs = Math.cos(rad), sn = Math.sin(rad);
+  return [[-a + c, -b], [a - c, -b], [a, -b + c], [a, b - c], [a - c, b], [-a + c, b], [-a, b - c], [-a, -b + c]].map(([x, y]) => [o.cx + x * cs - y * sn, o.cy + x * sn + y * cs]);
+}
+function bandX(pts, y0, y1) {
+  let lo = Infinity, hi = -Infinity;
+  for (let i = 0; i < pts.length; i++) {
+    const p = pts[i], q = pts[(i + 1) % pts.length];
+    if (p[1] >= y0 && p[1] <= y1) { lo = Math.min(lo, p[0]); hi = Math.max(hi, p[0]); }
+    for (const yy of [y0, y1]) if ((p[1] - yy) * (q[1] - yy) < 0) { const x = p[0] + (yy - p[1]) * (q[0] - p[0]) / (q[1] - p[1]); lo = Math.min(lo, x); hi = Math.max(hi, x); }
+  }
+  return lo <= hi ? [lo, hi] : null;
+}
+
+/* ---------- headings never end on a short word ---------- */
+/* Glue a heading's weak little words to the word after them, and its last two words together, with
+   no-break spaces, so no line ends on "to" or "a" and none leaves a lone word. Run before the reflow reads the
+   text, and after the narrow-screen pass has taken the long joins out (that script runs first, modules wait). */
+const NB = '\u00a0';
+function joinHeads() {
+  if (innerWidth <= 340) return;
+  for (const h of $$('h2.disp')) {
+    if (h.children.length) continue;
+    let w = h.textContent.replace(/[ \t\r\n\f]+/g, ' ').trim().split(' ');
+    if (w.length < 3) continue;
+    let t = w.join(' ').replace(/(^| )(the|to|is|a|an|of|and|or|in|on|at|for|I) (?=\S)/gi, (m, p, x) => p + x + NB);
+    w = t.split(' ');
+    if (!w[w.length - 1].includes(NB)) { const i = w.length - 2; t = w.slice(0, i).join(' ') + ' ' + w.slice(i).join(NB); }
+    if (t !== h.textContent) h.textContent = t;
+  }
+}
+joinHeads();
+
+/* ---------- pretext reflow ---------- */
+let PT = null;
+const flows = $$('.flow').map(c => ({ c, side: c.dataset.side, blocks: $$(':scope > *', c).map(el => { const k = el.cloneNode(true); $$('.sr', k).forEach(n => n.remove()); return { el, flow: el.hasAttribute('data-flow'), html: el.innerHTML, text: k.textContent.replace(/[ \t\r\n\f]+/g, ' ').trim(), key: '' }; }) }));
+function prep(b) {
+  const cs = getComputedStyle(b.el);
+  const font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  const ls = parseFloat(cs.letterSpacing) || 0;
+  const id = font + '|' + ls;
+  if (b.pid !== id) {
+    b.pid = id; b.fs = parseFloat(cs.fontSize); b.lh = parseFloat(cs.lineHeight) || b.fs * 1.2;
+    b.meas = b.el.classList.contains('body') || b.el.classList.contains('quote') ? b.fs * 40 : Infinity; // a readable measure on any width
+    b.prep = PT.prepareWithSegments(b.text, font, { letterSpacing: ls });
+    const disp = b.el.classList.contains('disp') || b.el.classList.contains('mega');
+    b.minW = disp ? Math.min(b.fs * 9, PT.measureNaturalWidth(b.prep) + 4) : b.fs * 12; // 24ch is about 12em in Newsreader
+  }
+}
+function free(x0, x1, y0, y1, obs) {
+  let ivs = [[x0, x1]];
+  for (const o of obs) {
+    const r = bandX(o, y0, y1); if (!r) continue;
+    const next = [];
+    for (const [a, b] of ivs) { if (r[1] <= a || r[0] >= b) next.push([a, b]); else { if (r[0] > a) next.push([a, r[0]]); if (r[1] < b) next.push([r[1], b]); } }
+    ivs = next;
+  }
+  return ivs;
+}
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function layoutBlock(b, x0, w, top, obs, side) {
+  const lines = []; let cur = { segmentIndex: 0, graphemeIndex: 0 }, row = 0, last = -1, done = false;
+  const minW = b.minW;
+  // the band a line occupies is the glyphs' box, not the line box: display type at .8 leading overhangs it
+  const over = Math.max(0, (b.fs * 1.02 - b.lh) / 2);
+  while (!done && row < 400) {
+    const y = top + row * b.lh;
+    const ivs = free(x0, x0 + w, y - over + b.lh * .04, y + b.lh + over - b.lh * .04, obs).filter(iv => iv[1] - iv[0] >= minW);
+    if (ivs.length) {
+      ivs.sort((p, q) => (q[1] - q[0]) - (p[1] - p[0]));
+      const pick = ivs.filter(iv => iv[1] - iv[0] > (ivs[0][1] - ivs[0][0]) * .6).sort((p, q) => side === 'right' ? q[0] - p[0] : p[0] - q[0])[0];
+      const width = Math.min((pick[1] - pick[0]) * .97 - 2, b.meas); // a little slack: canvas and the page can disagree on optical sizes by a few pixels
+      const r = PT.layoutNextLineRange(b.prep, cur, width);
+      if (!r) { done = true; break; }
+      const broke = r.end.graphemeIndex > 0 && PT.layoutNextLineRange(b.prep, r.end, 1e5);
+      if (!broke || pick[1] - pick[0] >= w - 4) {
+        lines.push({ x: pick[0] - x0, y: row * b.lh, w: r.width, t: PT.materializeLineRange(b.prep, r).text });
+        cur = r.end; last = row;
+        if (!PT.layoutNextLineRange(b.prep, cur, 1e5)) done = true;
+      }
+    }
+    row++;
+  }
+  return { lines, rows: last + 1 };
+}
+let heads = [];
+function reflow(obs) {
+  heads = [];
+  if (!PT || !DESK.matches) return;
+  for (const f of flows) {
+    const cr = f.c.getBoundingClientRect();
+    if (cr.bottom < 0 || cr.top > VH) continue; // only the scenes on screen
+    if (!f.c.classList.contains('flowing')) f.c.classList.add('flowing');
+    const x0 = cr.left, w = cr.width;
+    let top = cr.top;
+    for (const b of f.blocks) {
+      const cs = b.cs || (b.cs = getComputedStyle(b.el));
+      if (!b.flow) { // buttons and lists don't wrap, they slide clear of the phone as one piece
+        const h = b.el.offsetHeight, bw = b.el.offsetWidth;
+        const ivs = free(x0, x0 + w, top - 6, top + h + 6, obs).filter(iv => iv[1] - iv[0] >= Math.min(bw, w));
+        let pick = ivs.sort((p, q) => f.side === 'right' ? q[0] - p[0] : p[0] - q[0])[0];
+        if (!pick && f.side === 'right') pick = free(x0, x0 + w, top - 6, top + h + 6, obs).sort((p, q) => q[0] - p[0])[0]; // too tight: sit clear of the phone and run a little long
+        let dx = 0; if (pick && f.side === 'right') dx = Math.max(0, pick[0] - x0); if (dx && pick[0] - x0 + bw <= w) dx = Math.min(dx, w - bw);
+        const tf = dx ? `translateX(${dx.toFixed(1)}px)` : '';
+        if (b.el.style.transform !== tf) b.el.style.transform = tf;
+        top += h + parseFloat(cs.marginBottom);
+        continue;
+      }
+      prep(b);
+      const { lines, rows } = layoutBlock(b, x0, w, top, obs, f.side);
+      const hpx = rows * b.lh;
+      if (b.el.classList.contains('disp') || b.el.classList.contains('mega')) for (const l of lines) heads.push({ x: x0 + l.x, y: top + l.y, w: l.w, h: b.lh });
+      top += hpx + parseFloat(cs.marginBottom);
+      const key = lines.map(l => `${Math.round(l.x)},${Math.round(l.y)}:${l.t}`).join('|');
+      if (key === b.key) continue;
+      b.key = key;
+      b.el.style.height = hpx + 'px';
+      const label = b.el.querySelector('.sr');
+      // a link inside flowed text stays a link: its words are wrapped again on whichever lines they land
+      if (!b.links) { const d = document.createElement('div'); d.innerHTML = b.html; b.links = [...d.querySelectorAll('a')].map(a => { const t = a.textContent.replace(/[ \t\r\n\f]+/g, ' '); return { href: a.getAttribute('href'), s: b.text.indexOf(t), e: b.text.indexOf(t) + t.length }; }).filter(k => k.s >= 0); }
+      let at = 0;
+      const lineHtml = t => { const p0 = b.text.indexOf(t, at); at = p0 < 0 ? at : p0 + t.length; if (p0 < 0 || !b.links.length) return esc(t);
+        let out = '', i = 0;
+        for (const k of b.links) { const s0 = Math.max(k.s, p0) - p0, e0 = Math.min(k.e, p0 + t.length) - p0; if (e0 <= s0) continue; out += esc(t.slice(i, s0)) + `<a href="${k.href.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">${esc(t.slice(s0, e0))}</a>`; i = e0; }
+        return out + esc(t.slice(i)); };
+      const fa = document.activeElement, fi = fa && fa.tagName === 'A' && b.el.contains(fa) ? [...b.el.querySelectorAll('a')].indexOf(fa) : -1; // the link under the keyboard survives the redraw
+      b.el.innerHTML = (label ? label.outerHTML : '') + lines.map(l => { const t = l.t.replace(/\s+$/, ''); return `<span class="ln" style="transform:translate(${l.x.toFixed(1)}px,${l.y}px)">${lineHtml(t)} </span>`; }).join('');
+      if (fi >= 0) { const na = b.el.querySelectorAll('a')[fi]; if (na) na.focus({ preventScroll: true }); }
+    }
+  }
+}
+function unflow() {
+  for (const f of flows) { f.c.classList.remove('flowing'); for (const b of f.blocks) { b.el.style.transform = ''; if (b.flow) { b.el.innerHTML = b.html; b.el.style.height = ''; b.key = ''; } } }
+}
+
+/* ---------- frame loop ---------- */
+const phone = $('#phone'), floor = $('#floor'), screens = $$('.phone .scr');
+let intro = RM.matches ? 1 : 0, t0 = performance.now(), active = '', nav = '', fanT = 0, tilt = 0, tiltGoal = 0, paidK = 0;
+const navLinks = $$('.navpill a'), pills = $$('.hire, .desk-switch');
+/* The corner pills are fixed, so they only move when the window does: measured once per size, not on every frame. */
+let pillBox = null;
+addEventListener('resize', () => { pillBox = null; });
+const pillRects = () => pillBox || (pillBox = pills.map(p => p.getBoundingClientRect()));
+let shotImgs = null;
+function frame() {
+  if (!DESK.matches) return;
+  const { pose, scene, p, ga, gb, gt } = poseNow();
+  paint(ga, gb, gt);
+  // a scene's words never sit on the next scene's ground: the outgoing copy is gone by the midpoint, the incoming arrives after it
+  for (const sc of scenes) {
+    let o = 1;
+    if (ga !== gb) { if (sc.id === ga) o = 1 - ss(Math.min(1, Math.max(0, (gt - .3) / .2))); else if (sc.id === gb) o = ss(Math.min(1, Math.max(0, (gt - .5) / .14))); }
+    if (sc.op !== o) { sc.op = o; sc.frame = sc.frame || sc.el.querySelector('.frame'); sc.frame.style.opacity = o === 1 ? '' : o.toFixed(3); sc.frame.style.visibility = o < .01 ? 'hidden' : ''; }
+  }
+  let ps = { ...pose }, lift = 0;
+  if (intro < 1) { // the phone arrives: rises, dips a hair as it lands, and its shadow tightens under it
+    const e = bez(intro), land = Math.min(1, Math.max(0, (intro - .62) / .38));
+    ps.y += (1 - e) * .42 + .008 * Math.sin(Math.PI * land); ps.r += (1 - e) * -8; lift = 1 - e;
+  }
+  // the hero phone rides with the page under the copy line, so it never climbs over the name
+  ps.y = Math.max(ps.y, Y0 - scrollY / (900 * U));
+  // a big heading about to cross the phone: lean away from it, 5 degrees, so they never visibly meet
+  tilt += (tiltGoal - tilt) * (RM.matches ? 0 : .16); if (Math.abs(tiltGoal - tilt) > .05) req();
+  ps.r += tilt;
+  const s = RM.matches && scene.id === 'before' ? 1 : (pose.s || 0);
+  const mainOp = Math.max(0, 1 - s * 2.2);
+  phone.style.opacity = mainOp; phone.style.visibility = mainOp < .02 ? 'hidden' : 'visible';
+  const o = place(phone, ps, lift);
+  floor.style.transform = `translate(${(o.cx - 150).toFixed(1)}px,${(o.cy + o.h / 2 - 10).toFixed(1)}px) scale(${(o.w / 300 * 1.1 * (1 + lift * .5)).toFixed(3)},1)`;
+  floor.style.opacity = (.5 * mainOp * (1 - lift * .7)).toFixed(3);
+  const obs = mainOp > .3 ? [poly(o, 30 * U)] : [];
+  for (const r of pillRects()) { const m = 12; obs.push([[r.left - m, r.top - m], [r.right + m, r.top - m], [r.right + m, r.bottom + m], [r.left - m, r.bottom + m]]); }
+  const gs = ss(Math.min(1, s));
+  ghosts.forEach((g, k) => {
+    const op = Math.min(1, s * 2.5);
+    g.style.opacity = op; g.style.visibility = op < .02 ? 'hidden' : 'visible';
+    if (op < .02) return;
+    const go = place(g, mix(ps, { ...GT[k], h: .5 }, gs));
+    if (op > .3) obs.push(poly(go, 22 * U));
+  });
+  const want = scene.def.scr(p);
+  if (want === 'inc1' || want === 'inc2') liveScreens();
+  if (want !== active) {
+    active = want; screens.forEach(sc => { sc.classList.toggle('on', sc.dataset.s === want); sc.inert = sc.dataset.s !== want; }); // a screen that isn't showing can't be tabbed into or read out
+    const on = screens.find(sc => sc.dataset.s === want);
+    phone.style.setProperty('--sc', getComputedStyle(on).getPropertyValue('--sc').trim() || 'var(--ink)');
+    $$('.attn a').forEach(a => a.tabIndex = want === 'attn' ? 0 : -1);
+    pscreen.classList.toggle('at-pay', want === 'pay'); if (want !== 'pay' && pscreen.classList.contains('xr')) setXr(false);
+    phone.classList.toggle('rc-on', want === 'pay');
+    if (want === 'stats') rerollStats(on);
+    const st = $('.phone .stack');
+    if (want === 'notes') { clearTimeout(fanT); if (RM.matches) setFan(st, true); else fanT = setTimeout(() => setFan(st, true), 520); } else { clearTimeout(fanT); setFan(st, false); }
+  }
+  if (scene.n >= 3) (shotImgs || (shotImgs = $$('.phone .shot img'))).forEach(i => imgSet(i, `${Math.round(o.w * .94)}px`));
+  scenes.forEach(sc => sc.def.fx && sc.def.fx(sc === scene ? p : -1));
+  reflow(obs);
+  tiltGoal = 0;
+  if (mainOp > .3 && !RM.matches) { const bare = poly(o, 4 * U); for (const L of heads) { const r = bandX(bare, L.y, L.y + L.h); if (r && r[1] > L.x && r[0] < L.x + L.w) { tiltGoal = (L.x + L.w / 2 < o.cx ? 1 : -1) * 5; break; } } }
+  if (nav !== scene.id) { nav = scene.id; navLinks.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + scene.id ? 'true' : 'false')); }
+}
+let raf = 0; const req = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; frame(); }); };
+function introLoop(now) { intro = Math.min(1, Math.max(0, (now - t0 - 120) / 850)); frame(); if (intro < 1) requestAnimationFrame(introLoop); }
+let pretextAsked = false;
+async function loadPretext() {
+  if (pretextAsked) return; pretextAsked = true;
+  try {
+    PT = await import('/one-screen/vendor/pretext-0.0.9.js');
+    await Promise.all(['800 50px "Inter Tight"', '900 200px "Inter Tight"', '400 21px Newsreader', 'italic 400 24px Newsreader'].map(f => document.fonts.load(f)));
+    for (const f of flows) for (const b of f.blocks) { b.pid = ''; b.cs = null; }
+    measure(); req();
+  } catch (e) { PT = null; }
+}
+function setup() {
+  measure(); sizeLegacy();
+  const home = $('.phone-wrap');
+  /* On the phone the buttons sit below the demo (order:6), so they follow it in the DOM too, and Tab goes the way the eye does. */
+  const cta = $('#pay .row.o6'), rflow = $('#pay .flow[data-side="right"]');
+  if (cta && rflow) { if (DESK.matches) { if (cta.parentElement !== rflow) rflow.append(cta); } else if (cta.previousElementSibling !== home) home.after(cta); }
+  if (DESK.matches) {
+    if (phone.parentElement !== floor.parentNode) floor.parentNode.insertBefore(phone, floor);
+    for (const f of flows) for (const b of f.blocks) { b.pid = ''; b.cs = null; b.key = ''; }
+    frame(); loadPretext();
+  } else {
+    if (phone.parentElement !== home) home.append(phone);
+    unflow(); phone.style.transform = ''; phone.style.opacity = ''; phone.style.visibility = '';
+    screens.forEach(sc => sc.classList.toggle('on', sc.dataset.s === 'pay')); active = ''; pscreen.classList.add('at-pay');
+    ['--g', '--f', '--to'].forEach(v => root.style.removeProperty(v)); lastG = '';
+    scenes.forEach(sc => { sc.op = 1; const fr = sc.el.querySelector('.frame'); fr.style.opacity = ''; fr.style.visibility = ''; });
+  }
+}
+addEventListener('scroll', req, { passive: true });
+let rz = 0; addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(() => { setup(); req(); }); });
+DESK.addEventListener('change', setup); RM.addEventListener('change', () => { intro = 1; setup(); });
+setup();
+if (DESK.matches && !RM.matches) requestAnimationFrame(introLoop);
+/* the real faces land after first paint: re-measure every line against them */
+const refont = () => { for (const f of flows) for (const b of f.blocks) { b.pid = ''; b.cs = null; } if (DESK.matches) { measure(); req(); } };
+document.fonts.addEventListener('loadingdone', refont); document.fonts.ready.then(refont);
+
+/* mobile tab state */
+const tabIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$('.tabs a').forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false')); }), { rootMargin: '-45% 0px -50% 0px' });
+scenes.forEach(s => tabIO.observe(s.el));
+
+/* keyboard focus is never left below the fold: if the browser's own scroll to a focused control (the pay button on the first screen, for one) leaves it clipped, centre it */
+document.addEventListener('focusin', e => {
+  if (!e.target.matches || !e.target.matches(':focus-visible')) return;
+  const r = e.target.getBoundingClientRect(); if (r.width && (r.bottom > innerHeight - 96 || r.top < 0)) scrollBy({ top: r.top + r.height / 2 - innerHeight / 2, behavior: 'instant' }), frame();
+  /* a scene that pins its content can't be scrolled clear of the corner pills, so they step aside while the focused control sits under one */
+  const f = e.target.getBoundingClientRect(), pills = [...document.querySelectorAll('.hire, .desk-switch')];
+  pills.forEach(p => p.classList.remove('stepaside'));
+  pills.forEach(p => { if (p === e.target || p.contains(e.target)) return; const q = p.getBoundingClientRect(); p.classList.toggle('stepaside', f.right > q.left && f.left < q.right && f.bottom > q.top && f.top < q.bottom); });
+});
+document.addEventListener('focusout', () => document.querySelectorAll('.stepaside').forEach(p => p.classList.remove('stepaside')));
+</script>
+<script>
+/* Leaving for My Desk: the page lets go. The name falls letter by letter, then the rest of what's on screen tumbles off the bottom,
+   each piece at its own pace. Only transforms and opacity, and design-switch.js waits for it before it navigates. */
+document.addEventListener('ch-leave', e => {
+  if (e.detail.to !== 'the-desk' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const vh = innerHeight, seen = el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < vh && r.right > 0 && r.left < innerWidth; };
+  const rnd = (a, b, k) => a + (Math.abs(Math.sin(k * 12.9898 + 78.233) * 43758.5453) % 1) * (b - a);
+  const all = [...document.querySelectorAll('.name .c, .flow > *, .phone-wrap, .top, .hire, .desk-switch, .tabs, main section:not(#pay) :is(h2, h3, p, img, figure, .btn, .row)')].filter(seen);
+  const els = all.filter(el => !all.some(o => o !== el && o.contains(el)));
+  els.forEach((el, k) => { const letter = el.classList.contains('c'), i = letter ? +el.style.getPropertyValue('--i') || k : 0;
+    el.style.transformOrigin = '50% 100%';
+    el.animate([
+      { translate: '0 0', rotate: '0deg', opacity: 1, easing: 'cubic-bezier(.5,0,.9,.5)' },
+      { translate: `0 ${(vh * 1.3).toFixed(0)}px`, rotate: `${rnd(-38, 38, k).toFixed(0)}deg`, opacity: letter ? 1 : 0 }
+    ], { duration: letter ? 620 : 680, delay: letter ? Math.round(i * 40) : Math.round(160 + rnd(0, 260, k)), fill: 'forwards' }); });
+  e.detail.ms = 960;
+});
+</script>
+<script src="/quoin.js" defer></script>
+<script src="/quoin-seat.js" defer></script>
+<script>
+/* The joins that keep a short word off the end of a line are made for phones from 360px up. Narrower than that, and above all with a reader's own text spacing on top, a long joined run cannot wrap at all, so under 340px the joins come out and the words wrap freely. */
+if (innerWidth <= 340) { const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); for (let n; (n = w.nextNode());) if (n.nodeValue.includes('\u00a0') && !n.parentElement.closest('script,style,pre')) n.nodeValue = n.nodeValue.replace(/\u00a0/g, ' '); }
+</script>
+</body>
+</html>

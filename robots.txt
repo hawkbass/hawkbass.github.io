@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /inclusive-app/
 
 Sitemap: https://craighawkes.dev/sitemap.xml
